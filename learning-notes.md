@@ -283,6 +283,8 @@ After commit + push, your workspace is **clean**. "No local changes" means *"eve
 
 </details>
 
+&nbsp;
+
 <details open>
 <summary><strong>Pitfall 2: .gitignore won't touch already-added files</strong></summary>
 <br>
@@ -296,6 +298,8 @@ git rm --cached -r path/to/file   # remove from staging, keep the file
 ```
 
 </details>
+
+&nbsp;
 
 <details open>
 <summary><strong>Pitfall 3: You can't lose a repo by moving it</strong></summary>
@@ -474,6 +478,6 @@ git branch -D clean-slate
 
 > 🍑 *"Learning is like taking snapshots — every commit preserves a moment you can always revisit."*
 
-<sub>— Momo &nbsp;·&nbsp; August 2026</sub>
+<sub>Momo &nbsp;·&nbsp; andyttc05 &nbsp;·&nbsp; August 2026</sub>
 
 </div>

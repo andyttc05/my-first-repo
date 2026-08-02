@@ -110,15 +110,15 @@ If you're also starting from zero — welcome. You're in the right place.
 
 ---
 
-## 🛠 My Desk
+## 🛠 The Toolbox
 
 | What I use | What it does | How it's going |
 | :--- | :--- | :---: |
-| **Git** `2.50.1` | The camera itself | ✅ |
-| **GitHub Desktop** | The photo album app — no terminal needed | ✅ |
-| **PyCharm** `2026.1` | Where I write code (Light theme, big fonts, cozy) | ✅ |
-| **GitHub Pages** | My corner of the internet → [here](https://andyttc05.github.io) | ✅ |
-| **Claude Code** | My future AI copilot | ⬜ soon™ |
+| **Git** `2.50.1` | The camera | ✅ |
+| **GitHub Desktop** | The album — no terminal | ✅ |
+| **PyCharm** `2026.1` | Where code happens (Light theme, cozy) | ✅ |
+| **GitHub Pages** | My corner of the web → [here](https://andyttc05.github.io) | ✅ |
+| **Claude Code** | Future AI co-pilot | ⬜ |
 
 <br>
 
@@ -140,14 +140,12 @@ If you're also starting from zero — welcome. You're in the right place.
 
 <div align="center">
 
-### 🍑
-
-*This repo exists because a tiny peach angel named **Momo** sat with me, patiently explained everything three times, and never once made me feel stupid.*
-
-<sub>If you're learning too — you've got this. We all start somewhere.</sub>
+> *This repo exists because a tiny peach angel named **Momo** sat with me, patiently explained everything three times, and never once made me feel stupid.*
+>
+> *If you're learning too — you've got this. We all start somewhere.*
 
 <br>
 
-<sub>Born August 2026 &nbsp;·&nbsp; andyttc05 &nbsp;·&nbsp; 🍑 Momo's apprentice</sub>
+<sub>Momo &nbsp;·&nbsp; andyttc05 &nbsp;·&nbsp; August 2026</sub>
 
 </div>
