@@ -359,6 +359,87 @@ mv ~/Library/Application\ Support/GitHub\ Desktop /tmp/removed-github-desktop
 
 ---
 
+## 🔧 Rewriting Git History (Advanced)
+
+> ⚠️ **Use with care** — rewrites commit hashes, breaks other people's clones. Only for "I accidentally committed sensitive info" or "my history is a mess."
+
+### Scenario A: Replace sensitive strings across all history
+
+```bash
+cd ~/path/to/your-repo
+
+# Walk through every commit and replace /Users/your-name/... with ~
+git filter-branch --force --tree-filter \
+  "grep -rl 'string-to-replace' . 2>/dev/null | xargs -I{} sed -i '' 's|old-string|new-string|g' {}" \
+  --prune-empty -- --all
+```
+
+Push the cleaned version:
+
+```bash
+git push --force-with-lease origin main
+# --force-with-lease is safer than --force: it refuses if someone else pushed new commits
+```
+
+### Scenario B: Nuke all history, keep current files
+
+```bash
+cd ~/path/to/your-repo
+
+# 1. Create a branch with zero history
+git checkout --orphan clean-slate
+
+# 2. Commit all current files in one shot
+git add -A
+git commit -m "clean slate"
+
+# 3. Overwrite GitHub's main
+git push --force origin clean-slate:main
+
+# 4. Clean up locally
+git checkout main && git reset --hard origin/main && git branch -D clean-slate
+```
+
+### Scenario C: Full workflow (from dirty history to clean repo)
+
+```bash
+cd ~/path/to/your-repo
+
+# === Replace sensitive strings in history ===
+git filter-branch --force --tree-filter \
+  "grep -rl '/Users/your-name/' . 2>/dev/null | xargs -I{} sed -i '' 's|/Users/your-name/|~/|g' {}" \
+  --prune-empty -- --all
+
+# === Push the clean version ===
+git push --force-with-lease origin main
+
+# === Or: nuke everything, keep only current files ===
+git checkout --orphan clean-slate
+git add -A
+git commit -m "clean slate"
+git push --force origin clean-slate:main
+
+# === Local cleanup ===
+git checkout main
+git reset --hard origin/main
+git branch -D clean-slate
+```
+
+### Lessons learned
+
+| Lesson | Detail |
+| :--- | :--- |
+| Review before commit | Run `git diff` before `git add` — keep secrets out of history |
+| Terminal required | GitHub Desktop doesn't support force push — history rewrites need the terminal |
+| Don't blindly force | `--force-with-lease` is safer than `--force` — refuses if someone else pushed recently |
+| Terminal push needs a token | GitHub Desktop uses OAuth (no password). Terminal needs a PAT. See [🚀 Your First Push](#first-push) → ④ About tokens |
+| Clean up after | Run `branch -D` to delete temporary branches |
+| Reset after force push | After `--force`, local main and remote main have completely different histories — `git pull` will fail. Run `git fetch origin && git reset --hard origin/main` to sync |
+
+<br>
+
+---
+
 ## 🎯 What's Next
 
 - [x] ~~GitHub Pages~~ → [andyttc05.github.io](https://andyttc05.github.io) (bilingual, editorial design)
