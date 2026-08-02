@@ -1,0 +1,12 @@
+# JetBrains IDE（PyCharm / IntelliJ）配置
+.idea/
+
+# VS Code 配置
+.vscode/
+
+# macOS 系统垃圾文件
+.DS_Store
+
+# Python 缓存（以后写 Python 会用到）
+__pycache__/
+*.pyc
