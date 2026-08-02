@@ -4,27 +4,17 @@
 
 <div align="center">
 
-# my-first-repo
+# &nbsp;my-first-repo
 
-### *Andy Tsui's Git learning journal — from zero to push, and beyond*
-
-<br>
-
-<sub>Est. August 2026 &nbsp;·&nbsp; andyttc05 &nbsp;·&nbsp; 🍑 Momo's apprentice</sub>
-
-<br>
-<br>
-
-> *"Learning is like taking snapshots — every commit preserves a moment you can always revisit."*
+### &nbsp;*Started with "what even is Git" — somehow ended up with a website*
 
 <br>
 
-[About](#-about) &nbsp;·&nbsp;
-[Timeline](#-timeline) &nbsp;·&nbsp;
-[Files](#-whats-inside) &nbsp;·&nbsp;
-[Concepts](#-core-concepts) &nbsp;·&nbsp;
-[Tools](#-tool-stack) &nbsp;·&nbsp;
-[Contact](#-get-in-touch)
+> &ldquo;Learning is like taking snapshots — every <code>commit</code> saves a moment you can always flip back to.&rdquo;
+
+<br>
+
+&nbsp;&nbsp; [The Story](#-the-story) &nbsp;&middot;&nbsp; [Journey](#-the-journey) &nbsp;&middot;&nbsp; [What's Inside](#-whats-inside) &nbsp;&middot;&nbsp; [What I Picked Up](#-what-i-picked-up) &nbsp;&middot;&nbsp; [My Desk](#-my-desk) &nbsp;&middot;&nbsp; [Say Hi](#-say-hi)
 
 </div>
 
@@ -33,26 +23,30 @@
 
 ---
 
-## 📖 About
+## 📖 The Story
 
-This is the practice repository I created on **August 1, 2026**, while learning Git and GitHub from scratch with my little helper **Momo** by my side.
+One August afternoon, I sat down with a little peach-shaped angel named **Momo** and asked: "okay, what even *is* Git?"
 
-It captures the full journey — from *"What even is Git?"* to independently pushing code, and building my first bilingual website.
+Four hours later I had pushed code to a website called GitHub. The next day I had my own bilingual website live on the internet.
+
+This repo is the trail of breadcrumbs from that journey. Every commit is a "wait, I figured it out!" moment. Every file is something I wished someone had shown me on day one.
+
+If you're also starting from zero — welcome. You're in the right place.
 
 <br>
 
 ---
 
-## 🎓 Timeline
+## 🎓 The Journey
 
-| When | Milestone |
+| When | What happened |
 | :--- | :--- |
-| ☀️ &nbsp; Noon | Registered a GitHub account &middot; typed my first `git commit` |
-| 🌤️ &nbsp; Afternoon | First `git push` to GitHub — via terminal, token & all |
-| 🌙 &nbsp; Evening | Installed GitHub Desktop &middot; completed commit + push on my own |
-| 🌃 &nbsp; Late night | Learned `.gitignore` &middot; wired up PyCharm integration |
-| 🌌 &nbsp; Past midnight | Moved repo to `~/Documents` &middot; full PyCharm + GitHub Desktop reset |
-| 🍑 &nbsp; Day 2 | Built a bilingual **GitHub Pages** personal site &middot; optimized repo design &middot; made everything zh/en |
+| ☀️ &nbsp; Noon, Day 1 | Typed `git commit` for the first time. Felt like magic. |
+| 🌤️ &nbsp; Afternoon | Pushed to GitHub. Terminal, tokens, the whole rite of passage. |
+| 🌙 &nbsp; Evening | Discovered GitHub Desktop. Buttons! No more terminal anxiety! |
+| 🌃 &nbsp; Late night | `.gitignore` clicked. PyCharm and GitHub Desktop started talking to each other. |
+| 🌌 &nbsp; Past midnight | Moved the whole repo to `~/Documents`. It just… worked. Git is wild. |
+| 🍑 &nbsp; Day 2 | Built [andyttc05.github.io](https://andyttc05.github.io) — a personal website, from scratch, in two languages. |
 
 <br>
 
@@ -60,54 +54,54 @@ It captures the full journey — from *"What even is Git?"* to independently pus
 
 ## 📂 What's Inside
 
-| File | Description |
+| File | What you'll find |
 | :--- | :--- |
-| **[learning-notes.md](learning-notes.md)** | Full Git learning journal &mdash; all concepts, pitfalls, and config |
-| **[学习笔记.md](学习笔记.md)** | Same journal, in Chinese |
-| **README.md** | You're reading it |
-| **[.gitignore](.gitignore)** | Ignores PyCharm / editor config files |
+| **[learning-notes.md](learning-notes.md)** | The complete journal — every concept, every "ohhh" moment, every facepalm |
+| **[学习笔记.md](学习笔记.md)** | Same journal, 中文版 |
+| **README.md** | You're here! |
+| **[.gitignore](.gitignore)** | The unsung hero keeping editor junk out of your repo |
 
 <br>
 
 ---
 
-## 💎 Core Concepts
+## 💎 What I Picked Up
 
 <table>
   <tr>
     <td width="50%">
-      <strong>What Git is</strong><br>
-      <sub>A snapshot tool — every commit = one photo you can revisit.</sub>
+      <strong>Git is a camera, not a filing cabinet</strong><br>
+      <sub>Every commit is a photo. You can always flip back to yesterday.</sub>
     </td>
     <td width="50%">
-      <strong>What GitHub is</strong><br>
-      <sub>Your code's home in the cloud. Public showcase, private backup.</sub>
+      <strong>GitHub is your photo album in the cloud</strong><br>
+      <sub>Show it off, keep it private, lose your laptop — the album stays safe.</sub>
     </td>
   </tr>
   <tr>
     <td>
-      <strong>The four-zone flow</strong><br>
-      <sub>Working Directory → Staging → Local Repo → GitHub</sub>
+      <strong>The four stops on the train</strong><br>
+      <sub>Your folder → <code>git add</code> → <code>git commit</code> → GitHub. That's the whole ride.</sub>
     </td>
     <td>
-      <strong>The daily three</strong><br>
-      <sub><code>git add .</code> → <code>git commit -m "…"</code> → <code>git push</code></sub>
+      <strong>Three words every day</strong><br>
+      <sub><code>add .</code> / <code>commit -m</code> / <code>push</code>. That's it. That's the habit.</sub>
     </td>
   </tr>
   <tr>
     <td>
-      <strong>.gitignore rules</strong><br>
-      <sub>Only affects untracked files. Already-added files need <code>git rm --cached</code>.</sub>
+      <strong>.gitignore is a bouncer</strong><br>
+      <sub>Tell it who's not on the list. But if someone's already inside, you need <code>git rm --cached</code> to escort them out.</sub>
     </td>
     <td>
-      <strong>Repo portability</strong><br>
-      <sub>Drag the folder anywhere. The <code>.git</code> directory carries everything.</sub>
+      <strong>Repos are suitcases</strong><br>
+      <sub>Pick up the folder, move it anywhere. The <code>.git</code> directory inside carries everything — history, remote links, all of it.</sub>
     </td>
   </tr>
   <tr>
     <td colspan="2">
-      <strong>PyCharm + GitHub Desktop auto-sync</strong><br>
-      <sub>They share the same folder. Save in PyCharm → changes appear in GitHub Desktop instantly.</sub>
+      <strong>PyCharm and GitHub Desktop are best friends</strong><br>
+      <sub>They share the same folder. Save a file in PyCharm, and GitHub Desktop already knows about it. Like magic, but it's just the filesystem.</sub>
     </td>
   </tr>
 </table>
@@ -116,21 +110,21 @@ It captures the full journey — from *"What even is Git?"* to independently pus
 
 ---
 
-## 🛠 Tool Stack
+## 🛠 My Desk
 
-| Tool | Role | Status |
+| What I use | What it does | How it's going |
 | :--- | :--- | :---: |
-| **Git** `v2.50.1` | CLI version control | ✅ |
-| **GitHub Desktop** | GUI sync &middot; default editor: PyCharm | ✅ |
-| **PyCharm** `2026.1` | Python IDE &middot; Light theme &middot; font 15 | ✅ |
-| **GitHub Pages** | Personal site @ [andyttc05.github.io](https://andyttc05.github.io) | ✅ |
-| **Claude Code** | Terminal AI coding assistant | ⬜ |
+| **Git** `2.50.1` | The camera itself | ✅ |
+| **GitHub Desktop** | The photo album app — no terminal needed | ✅ |
+| **PyCharm** `2026.1` | Where I write code (Light theme, big fonts, cozy) | ✅ |
+| **GitHub Pages** | My corner of the internet → [here](https://andyttc05.github.io) | ✅ |
+| **Claude Code** | My future AI copilot | ⬜ soon™ |
 
 <br>
 
 ---
 
-## 🌐 Get in Touch
+## 🌐 Say Hi
 
 <p>
   <a href="https://github.com/andyttc05">github.com/andyttc05 &nearr;</a>
@@ -148,8 +142,12 @@ It captures the full journey — from *"What even is Git?"* to independently pus
 
 ### 🍑
 
-*Special thanks to **Momo** — my little angel who taught me Git from zero to building websites.*
+*This repo exists because a tiny peach angel named **Momo** sat with me, patiently explained everything three times, and never once made me feel stupid.*
 
-*"You don't need a terminal to master Git."*
+<sub>If you're learning too — you've got this. We all start somewhere.</sub>
+
+<br>
+
+<sub>Born August 2026 &nbsp;·&nbsp; andyttc05 &nbsp;·&nbsp; 🍑 Momo's apprentice</sub>
 
 </div>

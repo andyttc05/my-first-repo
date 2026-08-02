@@ -4,13 +4,13 @@
 
 <div align="center">
 
-# Git Learning Notes
+# &nbsp;Git Learning Notes
 
-### *From zero to Git/GitHub — a two-day evolution*
+### &nbsp;*From zero to Git/GitHub — a two-day evolution*
 
 <br>
 
-> Teacher: **Momo** 🍑 &nbsp;·&nbsp; Student: **andyttc05**
+> &nbsp;&nbsp;Teacher: **Momo** 🍑 &nbsp;·&nbsp; Student: **andyttc05** &nbsp;·&nbsp; Est. 2026.08
 
 <br>
 
@@ -36,13 +36,13 @@
 
 | When | Milestone |
 | :--- | :--- |
-| **Aug 1 &middot; Noon** | Registered GitHub + first commit |
-| **Aug 1 &middot; Afternoon** | First push to GitHub (terminal) |
-| **Aug 1 &middot; Evening** | Installed GitHub Desktop &middot; commit + push on my own |
-| **Aug 1 &middot; Late night** | Learned `.gitignore` + PyCharm integration |
-| **Aug 2 &middot; Past midnight** | Moved repo to `~/Documents` + full PyCharm & GitHub Desktop reset |
-| **Aug 2 &middot; Daytime** | Built bilingual personal website with GitHub Pages → [andyttc05.github.io](https://andyttc05.github.io) |
-| **Aug 2 &middot; Afternoon** | Made repo bilingual (README + notes zh/en) + full design overhaul |
+| **Aug 1 &middot; Noon** | Typed my first `git commit`. Felt like clicking a shutter for the first time |
+| **Aug 1 &middot; Afternoon** | First `git push` — terminal, tokens, slightly sweaty palms. The full rite of passage |
+| **Aug 1 &middot; Evening** | Discovered GitHub Desktop. Wait — buttons? No terminal? The world got brighter |
+| **Aug 1 &middot; Late night** | `.gitignore` finally clicked. PyCharm and GitHub Desktop started talking |
+| **Aug 2 &middot; Past midnight** | Dragged the repo to `~/Documents`… and it just followed. Git is magic |
+| **Aug 2 &middot; Daytime** | Built a bilingual personal website with GitHub Pages → [take a look](https://andyttc05.github.io) |
+| **Aug 2 &middot; Afternoon** | Made repo bilingual (two READMEs, two sets of notes) + replaced cold badges with warm words |
 
 <br>
 
@@ -199,18 +199,18 @@ They don't conflict. If you `git commit` in the terminal, GitHub Desktop sees it
 ## 🎯 Core Git Concepts
 
 ### What is Git?
-A snapshot tool — every commit saves a photo you can always revisit.
+Imagine holding a camera. Every time you finish writing some code, you press the shutter — `git commit`. The photo goes into an album, and you can flip back to see "what my code looked like yesterday." Git is that camera.
 
 ### The Four Zones
 
 ```
-Working Directory         where I edit files
-       ↓  git add
-Staging Area              queue changes for commit
-       ↓  git commit
-Local Repository          save a snapshot
-       ↓  git push
-GitHub (Remote)           upload to the cloud
+Working Directory        ✍️ where I write code
+       ↓  git add        📋 "I want this one in the album"
+Staging Area             📸 lined up for the photo
+       ↓  git commit     📷 click! saved to the album
+Local Repository         📚 the photo album on my computer
+       ↓  git push       ☁️ uploaded to the cloud
+GitHub (Remote)          🌐 a backup that never gets lost
 ```
 
 ### My Account
@@ -243,24 +243,29 @@ git push                          # upload to GitHub
 
 ### The auto-sync truth
 
-They share the **same folder**. No manual sync required:
+The first time I noticed this I stared at the screen for a few seconds — **they don't need manual syncing**. They share the same folder, like two people reading the same book:
 
 ```
-PyCharm opens ~/Documents/my-first-repo
+PyCharm opens ~/Documents/my-first-repo     ✍️ writing code here
               ↓ saves files
-     my-first-repo folder
+     my-first-repo folder                   📁 the book is here
               ↓ auto-detected
-  GitHub Desktop shows changes ✓
+  GitHub Desktop shows changes ✓            👀 it already knows
 ```
 
-**Prerequisites:**
-- PyCharm opens the **same** my-first-repo folder
-- GitHub Desktop added the **same** my-first-repo folder
+No cables. No "sync" button. No config. The folder changes, and GitHub Desktop just… knows. That's the whole trick.
+
+**All you need:**
+- PyCharm opens this folder
+- GitHub Desktop opens the same folder
+- That's it. Nothing more.
 
 ### Step-by-step
 
-1. Write code in PyCharm (auto-saves on window switch)
-2. Switch to GitHub Desktop → see **Changes**
+1. Write code in PyCharm (auto-saves on window switch — no Cmd+S required)
+2. Switch to GitHub Desktop → **Changes** are already listed on the left
+3. Write a Summary ("fixed a bug" / "added login feature") → click **Commit to main**
+4. Top bar now says **Push origin** → one more click → done
 3. Write **Summary** → click **Commit to main**
 4. Top bar shows **Push origin** → click → done
 
@@ -442,20 +447,33 @@ git branch -D clean-slate
 
 ## 🎯 What's Next
 
-- [x] ~~GitHub Pages~~ → [andyttc05.github.io](https://andyttc05.github.io) (bilingual, editorial design)
-- [x] ~~Bilingual zh/en~~ README & notes fully bilingual
-- [x] ~~Design overhaul~~ replaced Shields.io with editorial metadata, added nav bars + HTML tables + collapsible panels
-- [ ] Install Claude Code CLI (requires Pro/Max)
-- [ ] Learn branching (`git branch`, `git merge`)
-- [ ] Build a real Python project
+<table>
+  <tr>
+    <td width="33%">
+      <strong>✅ Done</strong><br>
+      <sub>GitHub Pages site<br>Bilingual zh/en docs<br>Editorial design polish</sub>
+    </td>
+    <td width="33%">
+      <strong>⬜ Up Next</strong><br>
+      <sub>Claude Code CLI<br>Git branching<br>First Python project</sub>
+    </td>
+    <td width="33%">
+      <strong>🔮 Someday</strong><br>
+      <sub>VS Code workflow<br>JavaScript basics<br>Open source contribution</sub>
+    </td>
+  </tr>
+</table>
 
 <br>
 
 ---
 
+<br>
+
 <div align="center">
 
 > 🍑 *"Learning is like taking snapshots — every commit preserves a moment you can always revisit."*
-> — Momo
+
+<sub>— Momo &nbsp;·&nbsp; August 2026</sub>
 
 </div>

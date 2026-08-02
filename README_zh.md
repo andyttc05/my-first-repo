@@ -4,27 +4,17 @@
 
 <div align="center">
 
-# my-first-repo
+# &nbsp;my-first-repo
 
-### *Andy Tsui 的 Git 学习日记 — 从零到 push，持续进化*
-
-<br>
-
-<sub>始于 2026 年 8 月 &nbsp;·&nbsp; andyttc05 &nbsp;·&nbsp; 🍑 Momo 的学徒</sub>
-
-<br>
-<br>
-
-> *"学习就像拍照片 — 每 commit 一次，就给自己留一张可以回看的快照。"*
+### &nbsp;*始于一个简单的问题：Git 到底是个啥 —— 结果一路建到了自己的网站*
 
 <br>
 
-[关于](#-关于) &nbsp;·&nbsp;
-[时间线](#-时间线) &nbsp;·&nbsp;
-[文件](#-仓库内容) &nbsp;·&nbsp;
-[概念](#-核心概念) &nbsp;·&nbsp;
-[工具](#-工具栈) &nbsp;·&nbsp;
-[联系](#-联系方式)
+> &ldquo;学习就像拍照片——每次 <code>commit</code>，都存下一张可以随时翻回去看的快照。&rdquo;
+
+<br>
+
+&nbsp;&nbsp; [故事](#-故事) &nbsp;&middot;&nbsp; [旅程](#-旅程) &nbsp;&middot;&nbsp; [里面有什么](#-里面有什么) &nbsp;&middot;&nbsp; [我学会的](#-我学会的) &nbsp;&middot;&nbsp; [我的桌面](#-我的桌面) &nbsp;&middot;&nbsp; [打个招呼](#-打个招呼)
 
 </div>
 
@@ -33,81 +23,85 @@
 
 ---
 
-## 📖 关于
+## 📖 故事
 
-这是我在 **2026 年 8 月 1 日** 跟着小天使 **Momo** 从零学 Git 和 GitHub 时创建的第一个练习仓库。
+八月的一个下午，我坐在电脑前，旁边蹲着一只桃子形状的小天使 **Momo**。我问她："Git 到底是个啥？"
 
-它见证了我从「Git 是什么鬼」到能独立管理项目、再到建出第一个双语网站的全过程。
+四个小时后，我已经把代码推到了一个叫 GitHub 的地方。第二天，我有了一个自己的双语网站。
+
+这个仓库就是那条路上的面包屑。每一次 commit 都是"啊，原来是这么回事！"的瞬间。每一个文件，都是我希望第一天就有人告诉我的东西。
+
+如果你也从零开始——欢迎。你来对地方了。
 
 <br>
 
 ---
 
-## 🎓 时间线
+## 🎓 旅程
 
-| 时间 | 里程碑 |
+| 时间 | 发生了什么 |
 | :--- | :--- |
-| ☀️ &nbsp; 中午 | 注册 GitHub 账号 &middot; 敲下第一个 `git commit` |
-| 🌤️ &nbsp; 下午 | 第一次 `git push` 到 GitHub — 终端、token 全套 |
-| 🌙 &nbsp; 晚上 | 安装 GitHub Desktop &middot; 独立完成 commit + push |
-| 🌃 &nbsp; 深夜 | 学 `.gitignore` &middot; 打通 PyCharm 集成 |
-| 🌌 &nbsp; 凌晨 | 仓库搬到 `~/Documents` &middot; PyCharm + GitHub Desktop 完全重置 |
-| 🍑 &nbsp; 第二天 | 建了中英双语 **GitHub Pages** 个人主页 &middot; 仓库设计优化 &middot; 全面双语化 |
+| ☀️ &nbsp; 第一天中午 | 敲下人生第一个 `git commit`。像变魔术一样。 |
+| 🌤️ &nbsp; 下午 | 第一次 push 到 GitHub。终端、token，全套新手礼包。 |
+| 🌙 &nbsp; 晚上 | 发现 GitHub Desktop。按钮！终于不用对着黑框框发呆了！ |
+| 🌃 &nbsp; 深夜 | `.gitignore` 通了。PyCharm 和 GitHub Desktop 开始自动聊天。 |
+| 🌌 &nbsp; 凌晨 | 把整个仓库拖到 `~/Documents`。它居然就这么跟着走了……Git 真神奇。 |
+| 🍑 &nbsp; 第二天 | 从零建了 [andyttc05.github.io](https://andyttc05.github.io)——一个中英双语的个人网站。 |
 
 <br>
 
 ---
 
-## 📂 仓库内容
+## 📂 里面有什么
 
-| 文件 | 说明 |
+| 文件 | 你会看到什么 |
 | :--- | :--- |
-| **[learning-notes.md](learning-notes.md)** | 完整 Git 学习笔记（英文版） |
-| **[学习笔记.md](学习笔记.md)** | 完整 Git 学习笔记（中文版） |
-| **README.md** | 仓库门面（英文版） |
-| **[.gitignore](.gitignore)** | 忽略 PyCharm / 编辑器配置文件 |
+| **[learning-notes.md](learning-notes.md)** | 完整学习日记——每个概念、每次"哦~"、每次翻车 |
+| **[学习笔记.md](学习笔记.md)** | 同一本日记，中文版 |
+| **README.md** | 你正在看 |
+| **[.gitignore](.gitignore)** | 默默帮你挡住编辑器垃圾的无名英雄 |
 
 <br>
 
 ---
 
-## 💎 核心概念
+## 💎 我学会的
 
 <table>
   <tr>
     <td width="50%">
-      <strong>Git 是什么</strong><br>
-      <sub>给项目拍照存档的工具 — 每次 commit 都是一张可回看的照片。</sub>
+      <strong>Git 是一台相机，不是一个柜子</strong><br>
+      <sub>每次 commit 都是一张照片。昨天的自己随时能翻出来看。</sub>
     </td>
     <td width="50%">
-      <strong>GitHub 是什么</strong><br>
-      <sub>代码在云端的家。公开展示，私密备份。</sub>
+      <strong>GitHub 是你放在云端的相册</strong><br>
+      <sub>可以晒、可以锁、可以换电脑——相册永远在。</sub>
     </td>
   </tr>
   <tr>
     <td>
-      <strong>四区域流转</strong><br>
-      <sub>工作区 → 暂存区 → 本地仓库 → GitHub</sub>
+      <strong>四站地铁</strong><br>
+      <sub>你的文件夹 → <code>git add</code> → <code>git commit</code> → GitHub。全程就四站。</sub>
     </td>
     <td>
-      <strong>日常三连</strong><br>
-      <sub><code>git add .</code> → <code>git commit -m "…"</code> → <code>git push</code></sub>
+      <strong>每天三句话</strong><br>
+      <sub><code>add .</code> / <code>commit -m</code> / <code>push</code>。就这三句。养成习惯就好。</sub>
     </td>
   </tr>
   <tr>
     <td>
-      <strong>.gitignore 原则</strong><br>
-      <sub>只对未跟踪文件生效。已 add 的文件需要 <code>git rm --cached</code> 脱钩。</sub>
+      <strong>.gitignore 是个门卫</strong><br>
+      <sub>告诉他谁不能进。但如果有人已经溜进去了，得用 <code>git rm --cached</code> 把人请出来。</sub>
     </td>
     <td>
-      <strong>仓库自带迁移</strong><br>
-      <sub>文件夹拖到哪都行 — <code>.git</code> 目录把一切带着走。</sub>
+      <strong>仓库是个行李箱</strong><br>
+      <sub>提起文件夹，走到哪拖到哪。藏在里面的 <code>.git</code> 目录把历史、远程链接、所有东西都带着走。</sub>
     </td>
   </tr>
   <tr>
     <td colspan="2">
-      <strong>PyCharm + GitHub Desktop 自动同步</strong><br>
-      <sub>共享同一个文件夹。PyCharm 保存 → GitHub Desktop 自动出现改动。</sub>
+      <strong>PyCharm 和 GitHub Desktop 是好朋友</strong><br>
+      <sub>它们共享同一个文件夹。你在 PyCharm 保存文件，GitHub Desktop 已经知道了。像魔法，但其实只是文件系统在帮忙。</sub>
     </td>
   </tr>
 </table>
@@ -116,21 +110,21 @@
 
 ---
 
-## 🛠 工具栈
+## 🛠 我的桌面
 
-| 工具 | 用途 | 状态 |
+| 我在用什么 | 干嘛用的 | 用得怎么样 |
 | :--- | :--- | :---: |
-| **Git** `v2.50.1` | 命令行版本管理 | ✅ |
-| **GitHub Desktop** | GUI 同步 &middot; 默认编辑器：PyCharm | ✅ |
-| **PyCharm** `2026.1` | Python IDE &middot; Light 主题 &middot; 字体 15 | ✅ |
-| **GitHub Pages** | 个人主页 @ [andyttc05.github.io](https://andyttc05.github.io) | ✅ |
-| **Claude Code** | 终端 AI 编程助手 | ⬜ |
+| **Git** `2.50.1` | 那台相机本身 | ✅ |
+| **GitHub Desktop** | 相册 app——再也不用终端 | ✅ |
+| **PyCharm** `2026.1` | 写代码的地方（浅色主题、大字、舒服） | ✅ |
+| **GitHub Pages** | 我在互联网上的小角落 → [这里](https://andyttc05.github.io) | ✅ |
+| **Claude Code** | 以后的 AI 副驾驶 | ⬜ 快了 |
 
 <br>
 
 ---
 
-## 🌐 联系方式
+## 🌐 打个招呼
 
 <p>
   <a href="https://github.com/andyttc05">github.com/andyttc05 &nearr;</a>
@@ -148,8 +142,12 @@
 
 ### 🍑
 
-*特别感谢 **Momo** — 我的小天使，教会我从零到 push，再到建出个人网站。*
+*这个仓库之所以存在，是因为有一只桃子小天使叫 **Momo**——她耐心地把每个东西讲三遍，从来没让我觉得自己笨。*
 
-*"不用终端也能玩转 Git。"*
+<sub>如果你也在学——你可以的。我们都从零开始过。</sub>
+
+<br>
+
+<sub>诞生于 2026 年 8 月 &nbsp;·&nbsp; andyttc05 &nbsp;·&nbsp; 🍑 Momo 的学徒</sub>
 
 </div>
