@@ -259,6 +259,42 @@ Made the `andyttc05.github.io` repo. GitHub saw the name and turned Pages on aut
 
 ---
 
+## Open Source License
+
+### Why you need one
+
+Posting code on GitHub doesn't mean others can legally use it. Copyright law defaults to "all rights reserved" — no License means people can look but can't touch.
+
+Adding a License says: hey, you can use my code, just follow these few rules.
+
+### Common licenses at a glance
+
+| License | In one sentence |
+| :--- | :--- |
+| MIT | Do whatever! Modify it, sell it, just keep my name on it |
+| Apache 2.0 | Like MIT, plus patent protection. Big companies love it |
+| GPL | You can use it, but your changes must also be open source |
+
+### My pick: MIT
+
+Went with MIT. Most permissive, most popular. Anyone can use, modify, or sell it — as long as they keep my copyright notice.
+
+### How to add a License
+
+**One-click on GitHub**:
+
+1. Repo homepage → **Add file** → **Create new file**
+2. Name it `LICENSE`
+3. Click **Choose a license template** on the right
+4. Pick MIT, fill in year and name → **Review and submit**
+5. Commit → done
+
+Also works in GitHub Desktop: create a file called `LICENSE` (no extension) in your repo folder, paste in the license text, and Push.
+
+> 💡 MIT doesn't expire — no renewal needed. Some people update `2026` to `2026-2027`, but it's entirely optional.
+
+---
+
 ## Common Pitfalls
 
 <details open>
@@ -421,11 +457,10 @@ git branch -D clean-slate
 | Aug 1, evening | Found GitHub Desktop. Wait, buttons? No terminal? |
 | Aug 1, late night | `.gitignore` finally made sense. PyCharm and GitHub Desktop started talking to each other |
 | Aug 2, past midnight | Moved the repo to `~/Documents`… and it just followed. Git is wild |
-| Aug 2, daytime | Built a bilingual site with GitHub Pages → [have a look](https://andyttc05.github.io) |
+| Aug 2, afternoon | Built a bilingual site with GitHub Pages → [have a look](https://andyttc05.github.io) |
 | Aug 2, afternoon | Made the repo bilingual: two READMEs, two sets of notes |
-| Aug 3, daytime | Gave all four docs a makeover: badges, better spacing, tighter writing |
-| Aug 3, evening | Renamed 学习笔记.md, tidied up the structure, learned what AI slop sounds like |
-| Aug 3, later | Learned Discard Changes and Reset to Commit — no more re-cloning when things go sideways |
+| Aug 3, afternoon | Gave all four docs a makeover, tidied up the structure |
+| Aug 3, afternoon | Learned Discard Changes and Reset to Commit — no more re-cloning when things go sideways |
 
 ---
 

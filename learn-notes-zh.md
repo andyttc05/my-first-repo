@@ -261,6 +261,42 @@ PyCharm 里写代码，切窗口自动保存。切到 GitHub Desktop，左边 Ch
 
 ---
 
+## 开源协议（License）
+
+### 为什么要贴 License
+
+代码公开在 GitHub 上，不等于别人就能合法地用。版权法默认"All rights reserved"——没贴 License 的公开仓库，别人看了也白看，碰都不能碰。
+
+贴了 License 就相当于说：嘿，可以用我的代码，遵守这几条规矩就行。
+
+### 常见协议速查
+
+| 协议 | 一句话 |
+| :--- | :--- |
+| MIT | 随便用！改也行、卖也行，只要留着我的名字 |
+| Apache 2.0 | 跟 MIT 差不多，多一层专利保护，大公司喜欢 |
+| GPL | 可以用，但你改完的代码也必须开源（传染性） |
+
+### 我的选择：MIT
+
+选了 MIT。最宽松，最主流。别人拿去用、改、卖，都行——只要保留我的版权声明。
+
+### 怎么加 License
+
+**GitHub 网页一键生成**：
+
+1. 仓库主页 → **Add file** → **Create new file**
+2. 文件名填 `LICENSE`
+3. 右边弹出 **Choose a license template** → 点它
+4. 选 MIT，填年份和名字 → **Review and submit**
+5. Commit → 搞定
+
+GitHub Desktop 里也行：在文件夹里新建一个叫 `LICENSE` 的文件（注意没有后缀），把协议内容贴进去，Push。
+
+> 💡 LICENSE 不需要更新。MIT 不会过期，放上去就一直有效。有人改年份为 `2026-2027`，但完全不是必须的。
+
+---
+
 ## 常踩的坑
 
 <details open>
@@ -423,11 +459,10 @@ git branch -D clean-slate
 | 8/1 晚上 | 发现 GitHub Desktop。等等，有按钮？不用终端？ |
 | 8/1 深夜 | `.gitignore` 终于通了。PyCharm 和 GitHub Desktop 开始互相认识了 |
 | 8/2 凌晨 | 把仓库从桌面拖到 Documents……它就这么跟着走了。Git 真离谱 |
-| 8/2 白天 | 从零建了中英双语的 GitHub Pages 主页 → [点开看看](https://andyttc05.github.io) |
+| 8/2 下午 | 从零建了中英双语的 GitHub Pages 主页 → [点开看看](https://andyttc05.github.io) |
 | 8/2 下午 | 仓库双语化，两套 README、两套笔记 |
-| 8/3 白天 | 给四份文档翻了个新，加徽章、调间距 |
-| 8/3 晚上 | 改了中文文件名、整理了笔记结构、见识了什么是 AI 味 |
-| 8/3 又一会 | 学会 Discard Changes 和 Reset to Commit，还原云端版本再也不用重新 clone |
+| 8/3 下午 | 给四份文档翻了个新、整理了笔记结构 |
+| 8/3 下午 | 学会 Discard Changes 和 Reset to Commit，还原云端版本再也不用重新 clone |
 
 ---
 
