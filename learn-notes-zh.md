@@ -168,6 +168,42 @@ git push
 
 终端 `git commit` 了，Desktop 能看到。Desktop 里 commit 了，终端也能看到。它们看的是同一个 `.git` 目录。不打架。
 
+### 还原成云端版本
+
+改了一通，越改越乱，最后想推倒重来——回到 GitHub 上的那个版本。这种"撤销"在 GitHub Desktop 里**分两种情况**，做法不一样。
+
+#### 情况一：还没 commit，只是改了文件
+
+最常见。文件改了，Changes 标签页里一堆，但还没点 Commit。
+
+**操作**：在 Changes 标签页**右键点击那个文件** → 选 **Discard Changes…** → 确认。这个文件就回到上次 commit 的样子了。
+
+想一次清掉所有文件？右键任意文件 → **Discard All Changes…**。
+
+> ⚠️ Discard 不可逆。点了就没了，确认前想清楚。
+
+每个文件右边还有个小图标（鼠标悬停显示"Revert file changes"），点那个也能直接 Discard 单个文件，比右键更顺手。
+
+#### 情况二：本地 commit 了，但还没 push，想把本地回退到远端
+
+本地 commit 了几次，发现方向走错了，想回到 `origin/main`。
+
+**操作**：
+
+1. 切到 **History** 标签页
+2. 找到远端那个 commit——通常标着 `origin/main`（或你对应的分支名）
+3. **右键点击**那个 commit → 选 **Reset to Commit → Hard**
+4. 确认 → 本地完全回到远端状态
+
+> ⚠️ Hard reset 不可逆。本地那几次 commit 会真的没掉。
+
+#### 速查
+
+| 状态 | 操作 | 在哪儿 |
+| :--- | :--- | :--- |
+| 改了文件但没 commit | Discard Changes | Changes 标签页 |
+| 本地 commit 了但没 push | Reset to Commit (Hard) | History → 右键 origin commit |
+
 ---
 
 ## PyCharm + GitHub Desktop 协同
@@ -391,6 +427,7 @@ git branch -D clean-slate
 | 8/2 下午 | 仓库双语化，两套 README、两套笔记 |
 | 8/3 白天 | 给四份文档翻了个新，加徽章、调间距 |
 | 8/3 晚上 | 改了中文文件名、整理了笔记结构、见识了什么是 AI 味 |
+| 8/3 又一会 | 学会 Discard Changes 和 Reset to Commit，还原云端版本再也不用重新 clone |
 
 ---
 

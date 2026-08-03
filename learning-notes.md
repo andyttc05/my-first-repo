@@ -166,6 +166,42 @@ No `git add`, no `git push`. Everything is auto-staged. One click to upload.
 
 Commit in the terminal, GitHub Desktop sees it. Commit in Desktop, the terminal sees it. They share the same `.git` folder. No drama.
 
+### Reverting to the cloud version
+
+Sometimes you mess around, things get worse, and you just want a clean reset — back to what's on GitHub. Two ways to do this in GitHub Desktop.
+
+#### Case 1: you haven't committed yet
+
+Most common. You've edited files, the Changes tab is full, but you never hit Commit.
+
+**How**: In the Changes tab, **right-click the file** → **Discard Changes…** → confirm. The file snaps back to the last commit.
+
+To nuke everything at once: right-click any file → **Discard All Changes…**.
+
+> ⚠️ Discard is final. No undo. Think twice before confirming.
+
+Each file also has a little icon on the right (hover says "Revert file changes"). Clicking that does the same thing — faster than right-clicking.
+
+#### Case 2: you committed locally but haven't pushed, and want to go back to origin
+
+Say you made a few local commits, realized you went the wrong direction, and want to be back at `origin/main`.
+
+**How**:
+
+1. Switch to the **History** tab
+2. Find the remote commit — usually labeled `origin/main` (or your branch name)
+3. **Right-click** that commit → **Reset to Commit → Hard**
+4. Confirm → your local is now identical to the remote
+
+> ⚠️ Hard reset is final. Those local commits are gone.
+
+#### Quick reference
+
+| Situation | Action | Where |
+| :--- | :--- | :--- |
+| Edited files, not committed | Discard Changes | Changes tab |
+| Committed locally, not pushed | Reset to Commit (Hard) | History → right-click origin commit |
+
 ---
 
 ## PyCharm + GitHub Desktop
@@ -389,6 +425,7 @@ git branch -D clean-slate
 | Aug 2, afternoon | Made the repo bilingual: two READMEs, two sets of notes |
 | Aug 3, daytime | Gave all four docs a makeover: badges, better spacing, tighter writing |
 | Aug 3, evening | Renamed 学习笔记.md, tidied up the structure, learned what AI slop sounds like |
+| Aug 3, later | Learned Discard Changes and Reset to Commit — no more re-cloning when things go sideways |
 
 ---
 
