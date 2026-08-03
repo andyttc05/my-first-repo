@@ -13,9 +13,9 @@
 <br>
 
 <p align="center">
-  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/在线网站-andyttc05.github.io-4c1?style=flat-square" alt="GitHub Pages"></a>
-  <a href="https://github.com/andyttc05/my-first-repo/blob/main/README.md"><img src="https://img.shields.io/badge/README-English-blue?style=flat-square" alt="English"></a>
-  <a href="https://github.com/andyttc05/my-first-repo/blob/main/LICENSE"><img src="https://img.shields.io/badge/协议-MIT-green?style=flat-square" alt="License"></a>
+  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/在线网站-andyttc05.github.io-brightgreen?style=flat-square" alt="GitHub Pages"></a>
+  <a href="https://github.com/andyttc05/my-first-repo/blob/main/README.md"><img src="https://img.shields.io/badge/README-English-%233498db?style=flat-square" alt="English"></a>
+  <a href="https://github.com/andyttc05/my-first-repo/blob/main/LICENSE"><img src="https://img.shields.io/badge/协议-MIT-blueviolet?style=flat-square" alt="License"></a>
   <img src="https://img.shields.io/badge/学习中-进行中-ff69b4?style=flat-square" alt="状态">
 </p>
 

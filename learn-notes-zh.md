@@ -13,10 +13,10 @@
 <br>
 
 <p align="center">
-  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/在线网站-andyttc05.github.io-4c1?style=flat-square" alt="GitHub Pages"></a>
-  <a href="https://github.com/andyttc05/my-first-repo/blob/main/learning-notes.md"><img src="https://img.shields.io/badge/笔记-English-blue?style=flat-square" alt="English"></a>
+  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/在线网站-andyttc05.github.io-brightgreen?style=flat-square" alt="GitHub Pages"></a>
+  <a href="https://github.com/andyttc05/my-first-repo/blob/main/learning-notes.md"><img src="https://img.shields.io/badge/笔记-English-%233498db?style=flat-square" alt="English"></a>
   <img src="https://img.shields.io/badge/师傅-Momo-ff69b4?style=flat-square" alt="帮手">
-  <img src="https://img.shields.io/badge/始于-2026.08-lightgrey?style=flat-square" alt="始于">
+  <img src="https://img.shields.io/badge/始于-2026.08-orange?style=flat-square" alt="始于">
 </p>
 
 <br>

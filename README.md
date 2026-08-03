@@ -13,9 +13,9 @@
 <br>
 
 <p align="center">
-  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/Live_Site-andyttc05.github.io-4c1?style=flat-square" alt="GitHub Pages"></a>
-  <a href="https://github.com/andyttc05/my-first-repo/blob/main/README_zh.md"><img src="https://img.shields.io/badge/README-中文-red?style=flat-square" alt="中文"></a>
-  <a href="https://github.com/andyttc05/my-first-repo/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License"></a>
+  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/Live_Site-andyttc05.github.io-brightgreen?style=flat-square" alt="GitHub Pages"></a>
+  <a href="https://github.com/andyttc05/my-first-repo/blob/main/README_zh.md"><img src="https://img.shields.io/badge/README-中文-%233498db?style=flat-square" alt="中文"></a>
+  <a href="https://github.com/andyttc05/my-first-repo/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blueviolet?style=flat-square" alt="License"></a>
   <img src="https://img.shields.io/badge/Learning-In_Progress-ff69b4?style=flat-square" alt="Learning">
 </p>
 
