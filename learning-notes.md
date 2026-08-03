@@ -4,204 +4,173 @@
 
 <div align="center">
 
-# &nbsp;Git Learning Notes
+# Git Learning Notes
 
-### &nbsp;*From zero to Git/GitHub — a two-day evolution*
-
-<br>
-
-> &nbsp;&nbsp;Teacher: **Momo** 🍑 &nbsp;·&nbsp; Student: **andyttc05** &nbsp;·&nbsp; Est. 2026.08
-
-<br>
-
-[Timeline](#-learning-timeline) &nbsp;·&nbsp;
-[Install Git](#-installing-git) &nbsp;·&nbsp;
-[First Push](#first-push) &nbsp;·&nbsp;
-[Desktop](#github-desktop) &nbsp;·&nbsp;
-[Pages](#github-pages) &nbsp;·&nbsp;
-[Git Basics](#-core-git-concepts) &nbsp;·&nbsp;
-[Daily Workflow](#-the-daily-three) &nbsp;·&nbsp;
-[Pitfalls](#-common-pitfalls) &nbsp;·&nbsp;
-[Setup](#-pycharm-setup) &nbsp;·&nbsp;
-[Next](#-whats-next)
+### *From zero to Git/GitHub — one question at a time*
 
 </div>
 
 <br>
+
+<p align="center">
+  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/Live_Site-andyttc05.github.io-4c1?style=flat-square" alt="GitHub Pages"></a>
+  <a href="https://github.com/andyttc05/my-first-repo/blob/main/学习笔记.md"><img src="https://img.shields.io/badge/Notes-中文-red?style=flat-square" alt="中文"></a>
+  <img src="https://img.shields.io/badge/Teacher-Momo_🍑-ff69b4?style=flat-square" alt="Teacher">
+  <img src="https://img.shields.io/badge/Est.-2026.08-lightgrey?style=flat-square" alt="Est.">
+</p>
+
 <br>
+
+> "The best way to learn something is to write down every 'ohhh' moment before it fades."
 
 ---
 
-## 🎓 Learning Timeline
+## Learning Timeline
 
 | When | Milestone |
 | :--- | :--- |
-| **Aug 1 &middot; Noon** | Typed my first `git commit`. Felt like clicking a shutter for the first time |
-| **Aug 1 &middot; Afternoon** | First `git push` — terminal, tokens, slightly sweaty palms. The full rite of passage |
-| **Aug 1 &middot; Evening** | Discovered GitHub Desktop. Wait — buttons? No terminal? The world got brighter |
-| **Aug 1 &middot; Late night** | `.gitignore` finally clicked. PyCharm and GitHub Desktop started talking |
-| **Aug 2 &middot; Past midnight** | Dragged the repo to `~/Documents`… and it just followed. Git is magic |
-| **Aug 2 &middot; Daytime** | Built a bilingual personal website with GitHub Pages → [take a look](https://andyttc05.github.io) |
-| **Aug 2 &middot; Afternoon** | Made repo bilingual (two READMEs, two sets of notes) + replaced cold badges with warm words |
-
-<br>
+| Aug 1, noon | Typed my first `git commit`. Felt like clicking a shutter |
+| Aug 1, afternoon | First `git push`. Terminal, tokens, sweaty palms. The full thing |
+| Aug 1, evening | Found GitHub Desktop. Wait — buttons? No terminal? |
+| Aug 1, late night | `.gitignore` finally made sense. PyCharm and GitHub Desktop started talking to each other |
+| Aug 2, past midnight | Moved the repo to `~/Documents`… and it just followed. Git is wild |
+| Aug 2, daytime | Built a bilingual site with GitHub Pages → [have a look](https://andyttc05.github.io) |
+| Aug 2, afternoon | Made the repo bilingual — two READMEs, two sets of notes |
+| Aug 3, daytime | Gave all four docs a makeover — badges, better spacing, every quote pulling its own weight |
 
 ---
 
-## 💻 Installing Git
+## Installing Git
 
-> 💡 Installing Git is step zero — without it, commit, push, and GitHub Desktop won't work.
+Before anything else, you need Git. Nothing works without it.
 
-### macOS (my environment)
+### macOS (my setup)
 
 ```bash
-# Recommended: install via Homebrew
 brew install git
 ```
 
-Verify:
+Check it worked:
 
 ```bash
 git --version
 # → git version 2.50.1
 ```
 
-Any version number = it's installed.
+If you see a version number, you're good.
 
 ### Windows
 
-Download the installer from [git-scm.com](https://git-scm.com) and follow the prompts. After installation, open **Git Bash** and run `git --version` to verify.
+Go to [git-scm.com](https://git-scm.com), grab the installer, keep clicking Next. Open **Git Bash** afterwards and run `git --version`.
 
-### First thing after installing: introduce yourself
+### First thing: tell Git who you are
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "your-email@example.com"
 ```
 
-> ⚠️ Use the **same email** as your GitHub account — otherwise commits won't link to your GitHub profile.
-
-<br>
+Make sure the email matches your GitHub account. Otherwise your commits show up with no avatar, like a ghost.
 
 ---
 
 <a id="first-push"></a>
 
-## 🚀 Your First Push — Step by Step
+## Your First Push — Step by Step
 
-> 💡 I stumbled through this on Day 1 — writing it down for future me (and anyone starting from zero).
+This one tripped me up on day one. Writing it down for future me, and for anyone starting from zero.
 
 ### ① Sign up for GitHub
 
-1. Go to [github.com](https://github.com) → click **Sign up**
-2. Enter your email, password, and a username (pick something you'll use as your developer identity)
-3. Verify your email → done
+Go to [github.com](https://github.com), click **Sign up**. Pick a username you actually like. It's going to show up on every commit forever.
 
-### ② Create a repo on GitHub (web)
+### ② Create a repo on GitHub
 
-1. Log in, click the **+** in the top-right → **New repository**
-2. **Repository name**: pick a name (e.g. `my-first-repo`)
-3. Choose **Public** or **Private**
-4. ⚠️ **Do NOT check** "Add a README file" (we'll create it locally)
-5. Click **Create repository** → copy the URL shown:
-   ```
-   https://github.com/your-username/your-repo.git
-   ```
+Click the **+** in the top right → **New repository**. Give it a name. Pick Public or Private. Do *not* check "Add a README file" — we'll make one ourselves.
 
-### ③ Initialize locally & connect to GitHub
+After clicking **Create repository**, copy the URL. It'll look like `https://github.com/your-username/your-repo.git`.
+
+### ③ Connect your local folder to GitHub
 
 ```bash
 cd your-project-folder
-git init                                    # initialize Git repo
-git add .                                   # stage everything
-git commit -m "first commit"                # your first snapshot
-git remote add origin <the-url-you-copied>  # link to GitHub
-git push -u origin main                     # upload
+git init
+git add .
+git commit -m "first commit"
+git remote add origin <the-url-you-copied>
+git push -u origin main
 ```
 
-### ④ About tokens (authentication)
+### ④ Tokens
 
-Since 2021, GitHub no longer accepts passwords for push — you need a **Personal Access Token**:
+GitHub stopped accepting passwords for push back in 2021. You need a Personal Access Token now.
 
-1. GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
-2. Generate new token → check `repo` scope → generate
-3. When pushing, use your GitHub username + **the token** as the password (not your login password)
+GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic). Generate a new one, check `repo`, copy it. When pushing from the terminal, use your GitHub username and paste the token as the password.
 
-> 💡 Once you install GitHub Desktop, you never need to deal with tokens again — browser auth handles everything.
+The good news: install GitHub Desktop and you never touch tokens again. Browser auth handles it.
 
-### ⑤ Verify — refresh your GitHub repo page
+### ⑤ Check if it worked
 
-Open `https://github.com/your-username/your-repo` — your code is now in the cloud 🎉
-
-<br>
+Open `https://github.com/your-username/your-repo`. Your code should be sitting there. 🎉
 
 ---
 
 <a id="github-desktop"></a>
 
-## 🖥 GitHub Desktop — Install & Use
+## GitHub Desktop
 
-> 💡 This is my go-to tool — everything is point-and-click, no terminal needed.
+This is my favorite tool. Everything is clicking buttons. Zero terminal.
 
-### Installation
+### Setting it up
 
-Go to [desktop.github.com](https://desktop.github.com) → download → open the dmg → drag to Applications → done.
+Go to [desktop.github.com](https://desktop.github.com), download, open the dmg, drag to Applications.
 
-### First login
+Launch it → **Sign in to GitHub.com** → browser opens → **Authorize**. That's it. No token, no password.
 
-Launch GitHub Desktop → **Sign in to GitHub.com** → browser opens → click **Authorize** → you're in. **No token, no password.**
+### The daily workflow
 
-### Daily three-click workflow
+Open your editor, write some code. Switch back to GitHub Desktop. The **Changes** tab already lists everything. Write a summary, click **Commit to main**. Top bar now says **Push origin** — click it and you're done.
 
-1. **Edit files** (PyCharm / Notepad / any editor)
-2. Switch back to GitHub Desktop → **Changes** tab shows everything automatically
-3. Write a **Summary** → click **Commit to main** → top bar shows **Push origin** → click
-
-> 🎯 No `git add`, no `git push` — all changes are auto-staged, one-click upload.
+No `git add`, no `git push`. Everything is auto-staged. One click to upload.
 
 ### Adding an existing repo
 
-**File → Add local repository** → pick your folder → **Add**. The repo appears in the sidebar — click to switch anytime.
+**File → Add local repository** → pick your folder. It shows up in the sidebar. Click to switch between repos anytime.
 
-### Relationship with the terminal
+### Desktop and terminal get along fine
 
-They don't conflict. If you `git commit` in the terminal, GitHub Desktop sees it. Vice versa.
-
-<br>
+Commit in the terminal, GitHub Desktop sees it. Commit in Desktop, the terminal sees it. They share the same `.git` folder. No drama.
 
 ---
 
 <a id="github-pages"></a>
 
-## 🌐 GitHub Pages — My First Website
+## GitHub Pages — My First Website
 
-> 💡 This was my first "non-Git" skill — but Git managed the whole process.
+This was my first detour outside of Git itself. Turns out Git quietly managed the whole thing anyway.
 
 ### What I built
 
-1. Created the `andyttc05.github.io` repo (GitHub auto-detects it as a Pages site)
-2. Wrote a pure HTML + CSS personal homepage (editorial/magazine style)
-3. Split into `index.html` (EN) + `zh.html` (中文) with card-style language toggle
-4. Added Pull Quote, fade-in animations, alternating backgrounds, responsive layout
-5. Fixed a Safari hover color bug on contact links
+Made the `andyttc05.github.io` repo. GitHub saw the name and turned on Pages automatically. Wrote everything in plain HTML and CSS — clean, readable, nothing fancy. Split it into `index.html` (EN) and `zh.html` with a card toggle to jump between them. Sprinkled in some Pull Quotes, fade-in animations, alternating backgrounds. Made it work on different screen sizes. Then spent way too long tracking down a Safari hover color bug on the contact links. Got it eventually.
 
-### What I learned
+### What clicked
 
 | Concept | Takeaway |
 | :--- | :--- |
-| GitHub Pages | Repo named `username.github.io` → auto-deployed, free domain |
-| Static sites | HTML + CSS → opens in browser, no server needed |
-| Bilingual design | Two files + card toggle → page reload on switch |
-| Design iteration | Edit in PyCharm, commit in GitHub Desktop → live in 30s |
+| GitHub Pages | Name a repo `username.github.io` and it auto-deploys. Free domain |
+| Static sites | HTML + CSS. Opens in a browser. No server needed |
+| Bilingual design | Two files, a card toggle, page reloads on switch |
+| Design iteration | Edit in PyCharm, commit in Desktop, live in 30 seconds |
 
 ---
 
-## 🎯 Core Git Concepts
+## Core Git Concepts
 
 ### What is Git?
-Imagine holding a camera. Every time you finish writing some code, you press the shutter — `git commit`. The photo goes into an album, and you can flip back to see "what my code looked like yesterday." Git is that camera.
 
-### The Four Zones
+You know how you take a photo so you can look back at it later? Git is that, but for your code. You type `git commit` and it takes a snapshot of everything. Tomorrow you can flip back and see exactly what your code looked like. That's it. That's Git.
+
+### The four zones
 
 ```
 Working Directory        ✍️ where I write code
@@ -213,132 +182,111 @@ Local Repository         📚 the photo album on my computer
 GitHub (Remote)          🌐 a backup that never gets lost
 ```
 
-### My Account
+### My account
 
 | Field | Value |
 | :--- | :--- |
 | GitHub | [andyttc05](https://github.com/andyttc05) |
 | Email | andyttc2463@gmail.com |
-| Config path | `~/.config/git/config` (XDG, sandbox-safe) |
-
-<br>
+| Config | `~/.config/git/config` |
 
 ---
 
-## ⚡ The Daily Three
+## The Daily Three
 
 ```bash
-git add .                         # stage all changes
-git commit -m "what I did"        # save a snapshot
-git push                          # upload to GitHub
+git add .
+git commit -m "what I did"
+git push
 ```
 
-> 💡 **No terminal needed**: All three can be done with button clicks in **GitHub Desktop**.
-
-<br>
+Or skip the terminal. All three are one click each in GitHub Desktop.
 
 ---
 
-## 🔗 PyCharm + GitHub Desktop Workflow
+## PyCharm + GitHub Desktop
 
-### The auto-sync truth
+### How they sync (or don't)
 
-The first time I noticed this I stared at the screen for a few seconds — **they don't need manual syncing**. They share the same folder, like two people reading the same book:
+The first time I noticed this I stared at the screen for a bit. They don't need me to sync them. They just look at the same folder. Like two people reading the same book — no passing notes.
 
 ```
-PyCharm opens ~/Documents/my-first-repo     ✍️ writing code here
+PyCharm opens ~/Documents/my-first-repo     ✍️ writing code
               ↓ saves files
-     my-first-repo folder                   📁 the book is here
+     my-first-repo folder                   📁 the book
               ↓ auto-detected
-  GitHub Desktop shows changes ✓            👀 it already knows
+  GitHub Desktop shows changes ✓            👀 already knows
 ```
 
-No cables. No "sync" button. No config. The folder changes, and GitHub Desktop just… knows. That's the whole trick.
+No cables. No config file. No sync button. The folder changes, GitHub Desktop notices. That's the whole trick.
 
-**All you need:**
-- PyCharm opens this folder
-- GitHub Desktop opens the same folder
-- That's it. Nothing more.
+You just need PyCharm to open this folder, and GitHub Desktop to open the same folder. Nothing else.
 
-### Step-by-step
+### The actual steps
 
-1. Write code in PyCharm (auto-saves on window switch — no Cmd+S required)
-2. Switch to GitHub Desktop → **Changes** are already listed on the left
-3. Write a Summary ("fixed a bug" / "added login feature") → click **Commit to main**
-4. Top bar now says **Push origin** → one more click → done
-3. Write **Summary** → click **Commit to main**
-4. Top bar shows **Push origin** → click → done
-
-<br>
+Write code in PyCharm. It auto-saves when you switch windows. Switch to GitHub Desktop — the changes are already listed on the left. Type a summary like "fixed that bug" or "login page done". Click **Commit to main**. The top bar now says **Push origin**. Click it. Done.
 
 ---
 
-## ⚠️ Common Pitfalls
+## Common Pitfalls
 
 <details open>
-<summary><strong>Pitfall 1: "No local changes" is a feature, not a bug</strong></summary>
+<summary>Pitfall 1: "No local changes" is not an error</summary>
 <br>
 
-After commit + push, your workspace is **clean**. "No local changes" means *"everything committed, nothing left behind."*
+After you commit and push, your workspace goes quiet. "No local changes" is Git's way of saying everything is accounted for. Nothing got left behind.
 
 </details>
 
-&nbsp;
-
 <details open>
-<summary><strong>Pitfall 2: .gitignore won't touch already-added files</strong></summary>
+<summary>Pitfall 2: .gitignore has a blind spot</summary>
 <br>
 
-> `.gitignore` only affects **untracked** files. Already `git add`-ed files are immune.
+`.gitignore` only watches untracked files. Files you've already `git add`-ed? It pretends they don't exist.
 
-To detach them:
+To fix it:
 
 ```bash
-git rm --cached -r path/to/file   # remove from staging, keep the file
+git rm --cached -r path/to/file
 ```
 
-</details>
+This removes the file from staging but keeps it on disk.
 
-&nbsp;
+</details>
 
 <details open>
-<summary><strong>Pitfall 3: You can't lose a repo by moving it</strong></summary>
+<summary>Pitfall 3: You can't lose a repo by moving it</summary>
 <br>
 
-A Git repo = a folder with a hidden `.git` directory. **Self-contained and portable.**
+A Git repo is just a folder with a hidden `.git` directory inside. That `.git` directory carries everything — your history, where it connects to, every snapshot.
 
-- Drag the whole folder anywhere — code, history, remote connection all follow
-- Only thing to do: GitHub Desktop → **File → Add local repository** → pick new location
+You can drag the whole folder anywhere and it still works. Only thing to remember: GitHub Desktop needs **File → Add local repository** pointed to the new spot.
 
 </details>
-
-<br>
 
 ---
 
-## 🐍 PyCharm Setup
+## PyCharm Setup
 
 | Setting | Value | Path |
 | :--- | :--- | :--- |
-| Theme | **Light** | Settings → Appearance |
-| Font size | **15** | Settings → Editor → Font |
-| Auto-save | **On window switch** | Settings → System Settings |
-
-<br>
+| Theme | Light (dark mode is overrated) | Settings → Appearance |
+| Font size | 15 | Settings → Editor → Font |
+| Auto-save | On window switch | Settings → System Settings |
 
 ---
 
-## 📂 Tool Chain
+## Tool Chain
 
 | Tool | Status |
 | :--- | :---: |
-| **Git** `v2.50.1` | ✅ |
+| **Git** v2.50.1 | ✅ |
 | **GitHub Desktop** | ✅ |
-| **PyCharm** `2026.1` (Light / font 15) | ✅ |
+| **PyCharm** 2026.1 (Light, font 15) | ✅ |
 | **GitHub Pages** → [andyttc05.github.io](https://andyttc05.github.io) | ✅ |
-| **Claude Code** | ⬜ |
+| **Claude Code** | 🍑 |
 
-### Key Paths
+### Key paths
 
 | What | Where |
 | :--- | :--- |
@@ -346,13 +294,11 @@ A Git repo = a folder with a hidden `.git` directory. **Self-contained and porta
 | Remote | `https://github.com/andyttc05/my-first-repo` |
 | Git config | `~/.config/git/config` |
 
-<br>
-
 ---
 
-## 🔄 How to Reset Tools
+## How to Reset Tools
 
-Move config directories to `/tmp/` = factory reset:
+Move the config folder to `/tmp/` and the tool forgets everything. Clean start:
 
 ```bash
 # PyCharm
@@ -362,22 +308,19 @@ mv ~/Library/Application\ Support/JetBrains/PyCharm2026.1 /tmp/removed-pycharm
 mv ~/Library/Application\ Support/GitHub\ Desktop /tmp/removed-github-desktop
 ```
 
-> 📦 Old config stays in `/tmp/` — recoverable anytime.
-
-<br>
+Old config sits in `/tmp/`. It's not gone. Go get it if you change your mind.
 
 ---
 
-## 🔧 Rewriting Git History (Advanced)
+## Rewriting Git History (Advanced)
 
-> ⚠️ **Use with care** — rewrites commit hashes, breaks other people's clones. Only for "I accidentally committed sensitive info" or "my history is a mess."
+Be careful with this. It rewrites commit hashes, which breaks things for anyone who cloned your repo. Only use it if you accidentally committed something sensitive, or your commit history is a mess you want to clean up.
 
-### Scenario A: Replace sensitive strings across all history
+### Scenario A: Replace sensitive strings everywhere
 
 ```bash
 cd ~/path/to/your-repo
 
-# Walk through every commit and replace /Users/your-name/... with ~
 git filter-branch --force --tree-filter \
   "grep -rl 'string-to-replace' . 2>/dev/null | xargs -I{} sed -i '' 's|old-string|new-string|g' {}" \
   --prune-empty -- --all
@@ -387,88 +330,77 @@ Push the cleaned version:
 
 ```bash
 git push --force-with-lease origin main
-# --force-with-lease is safer than --force: it refuses if someone else pushed new commits
 ```
 
-### Scenario B: Nuke all history, keep current files
+`--force-with-lease` is safer than `--force`. It refuses if someone else pushed since you last pulled.
+
+### Scenario B: Wipe history, keep files
 
 ```bash
 cd ~/path/to/your-repo
 
-# 1. Create a branch with zero history
 git checkout --orphan clean-slate
-
-# 2. Commit all current files in one shot
 git add -A
 git commit -m "clean slate"
-
-# 3. Overwrite GitHub's main
 git push --force origin clean-slate:main
-
-# 4. Clean up locally
-git checkout main && git reset --hard origin/main && git branch -D clean-slate
 ```
 
-### Scenario C: Full workflow (from dirty history to clean repo)
+Then clean up locally:
 
 ```bash
-cd ~/path/to/your-repo
-
-# === Replace sensitive strings in history ===
-git filter-branch --force --tree-filter \
-  "grep -rl '/Users/your-name/' . 2>/dev/null | xargs -I{} sed -i '' 's|/Users/your-name/|~/|g' {}" \
-  --prune-empty -- --all
-
-# === Push the clean version ===
-git push --force-with-lease origin main
-
-# === Or: nuke everything, keep only current files ===
-git checkout --orphan clean-slate
-git add -A
-git commit -m "clean slate"
-git push --force origin clean-slate:main
-
-# === Local cleanup ===
 git checkout main
 git reset --hard origin/main
 git branch -D clean-slate
 ```
 
-### Lessons learned
+### Scenario C: Full workflow (dirty history → clean repo)
+
+```bash
+cd ~/path/to/your-repo
+
+# Replace sensitive strings
+git filter-branch --force --tree-filter \
+  "grep -rl '/Users/your-name/' . 2>/dev/null | xargs -I{} sed -i '' 's|/Users/your-name/|~/|g' {}" \
+  --prune-empty -- --all
+
+# Push cleaned version
+git push --force-with-lease origin main
+
+# Or nuke everything, keep only current files
+git checkout --orphan clean-slate
+git add -A
+git commit -m "clean slate"
+git push --force origin clean-slate:main
+
+# Clean up
+git checkout main
+git reset --hard origin/main
+git branch -D clean-slate
+```
+
+### What I learned from doing this
 
 | Lesson | Detail |
 | :--- | :--- |
-| Review before commit | Run `git diff` before `git add` — keep secrets out of history |
-| Terminal required | GitHub Desktop doesn't support force push — history rewrites need the terminal |
-| Don't blindly force | `--force-with-lease` is safer than `--force` — refuses if someone else pushed recently |
-| Terminal push needs a token | GitHub Desktop uses OAuth (no password). Terminal needs a PAT. See [🚀 Your First Push](#first-push) → ④ About tokens |
-| Clean up after | Run `branch -D` to delete temporary branches |
-| Reset after force push | After `--force`, local main and remote main have completely different histories — `git pull` will fail. Run `git fetch origin && git reset --hard origin/main` to sync |
-
-<br>
+| Check before you commit | Run `git diff` first. Keep secrets out of your history |
+| You'll need the terminal | GitHub Desktop doesn't support force push |
+| Don't just `--force` | `--force-with-lease` is safer. It'll say no if someone else pushed since you last pulled |
+| Terminal push needs a token | Desktop uses OAuth. Terminal still wants a PAT. See [Your First Push](#first-push) step ④ |
+| Clean up after yourself | `branch -D` to delete temporary branches |
+| Reset after force push | After `--force`, local and remote main have different histories. `git pull` won't work. Run `git fetch origin && git reset --hard origin/main` to get them back in sync |
 
 ---
 
-## 🎯 What's Next
+## What's Next
 
-<table>
-  <tr>
-    <td width="33%">
-      <strong>✅ Done</strong><br>
-      <sub>GitHub Pages site<br>Bilingual zh/en docs<br>Editorial design polish</sub>
-    </td>
-    <td width="33%">
-      <strong>⬜ Up Next</strong><br>
-      <sub>Claude Code CLI<br>Git branching<br>First Python project</sub>
-    </td>
-    <td width="33%">
-      <strong>🔮 Someday</strong><br>
-      <sub>VS Code workflow<br>JavaScript basics<br>Open source contribution</sub>
-    </td>
-  </tr>
-</table>
+**Done.**
+GitHub Pages site, bilingual docs, README makeover.
 
-<br>
+**Up next.**
+Git branching, first Python project, whatever I get curious about.
+
+**Someday.**
+VS Code, JavaScript, contributing to something open source.
 
 ---
 
@@ -476,8 +408,6 @@ git branch -D clean-slate
 
 <div align="center">
 
-> 🍑 *"Learning is like taking snapshots — every commit preserves a moment you can always revisit."*
-
-<sub>Momo &nbsp;·&nbsp; andyttc05 &nbsp;·&nbsp; August 2026</sub>
+> "Every expert started by typing `git init` for the first time. These notes are what that looks like."
 
 </div>
