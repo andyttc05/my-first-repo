@@ -1,4 +1,4 @@
-**English** &nbsp;|&nbsp; [中文](学习笔记.md)
+**English** &nbsp;|&nbsp; [中文](learn-notes-zh.md)
 
 <br>
 
@@ -6,7 +6,7 @@
 
 # Git Learning Notes
 
-### *From zero to Git/GitHub — one question at a time*
+### *From zero to Git/GitHub. One question at a time.*
 
 </div>
 
@@ -14,8 +14,8 @@
 
 <p align="center">
   <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/Live_Site-andyttc05.github.io-4c1?style=flat-square" alt="GitHub Pages"></a>
-  <a href="https://github.com/andyttc05/my-first-repo/blob/main/学习笔记.md"><img src="https://img.shields.io/badge/Notes-中文-red?style=flat-square" alt="中文"></a>
-  <img src="https://img.shields.io/badge/Teacher-Momo_🍑-ff69b4?style=flat-square" alt="Teacher">
+  <a href="https://github.com/andyttc05/my-first-repo/blob/main/learn-notes-zh.md"><img src="https://img.shields.io/badge/Notes-中文-red?style=flat-square" alt="中文"></a>
+  <img src="https://img.shields.io/badge/Teacher-Momo-ff69b4?style=flat-square" alt="Helper">
   <img src="https://img.shields.io/badge/Est.-2026.08-lightgrey?style=flat-square" alt="Est.">
 </p>
 
@@ -25,18 +25,31 @@
 
 ---
 
-## Learning Timeline
+## Core Git Concepts
 
-| When | Milestone |
+### What is Git?
+
+You know how you take a photo so you can look back at it later? Git is that, but for your code. You type `git commit` and it takes a snapshot of everything. Tomorrow you can flip back and see exactly what your code looked like. That's it. That's Git.
+
+### The four zones
+
+```
+Working Directory        ✍️ where I write code
+       ↓  git add        📋 "I want this one in the album"
+Staging Area             📸 lined up for the photo
+       ↓  git commit     📷 click! saved to the album
+Local Repository         📚 the photo album on my computer
+       ↓  git push       ☁️ uploaded to the cloud
+GitHub (Remote)          🌐 a backup that never gets lost
+```
+
+### My account
+
+| Field | Value |
 | :--- | :--- |
-| Aug 1, noon | Typed my first `git commit`. Felt like clicking a shutter |
-| Aug 1, afternoon | First `git push`. Terminal, tokens, sweaty palms. The full thing |
-| Aug 1, evening | Found GitHub Desktop. Wait — buttons? No terminal? |
-| Aug 1, late night | `.gitignore` finally made sense. PyCharm and GitHub Desktop started talking to each other |
-| Aug 2, past midnight | Moved the repo to `~/Documents`… and it just followed. Git is wild |
-| Aug 2, daytime | Built a bilingual site with GitHub Pages → [have a look](https://andyttc05.github.io) |
-| Aug 2, afternoon | Made the repo bilingual — two READMEs, two sets of notes |
-| Aug 3, daytime | Gave all four docs a makeover — badges, better spacing, every quote pulling its own weight |
+| GitHub | [andyttc05](https://github.com/andyttc05) |
+| Email | andyttc2463@gmail.com |
+| Config | `~/.config/git/config` |
 
 ---
 
@@ -76,9 +89,9 @@ Make sure the email matches your GitHub account. Otherwise your commits show up 
 
 <a id="first-push"></a>
 
-## Your First Push — Step by Step
+## Your First Push: Step by Step
 
-This one tripped me up on day one. Writing it down for future me, and for anyone starting from zero.
+This one tripped me up on day one. Writing this down for the version of me that'll forget it in a week.
 
 ### ① Sign up for GitHub
 
@@ -86,7 +99,7 @@ Go to [github.com](https://github.com), click **Sign up**. Pick a username you a
 
 ### ② Create a repo on GitHub
 
-Click the **+** in the top right → **New repository**. Give it a name. Pick Public or Private. Do *not* check "Add a README file" — we'll make one ourselves.
+Click the **+** in the top right → **New repository**. Give it a name. Pick Public or Private. Do *not* check "Add a README file". We'll make one ourselves.
 
 After clicking **Create repository**, copy the URL. It'll look like `https://github.com/your-username/your-repo.git`.
 
@@ -115,6 +128,18 @@ Open `https://github.com/your-username/your-repo`. Your code should be sitting t
 
 ---
 
+## The Daily Three
+
+```bash
+git add .
+git commit -m "what I did"
+git push
+```
+
+Or skip the terminal. All three are one click each in GitHub Desktop.
+
+---
+
 <a id="github-desktop"></a>
 
 ## GitHub Desktop
@@ -129,7 +154,7 @@ Launch it → **Sign in to GitHub.com** → browser opens → **Authorize**. Tha
 
 ### The daily workflow
 
-Open your editor, write some code. Switch back to GitHub Desktop. The **Changes** tab already lists everything. Write a summary, click **Commit to main**. Top bar now says **Push origin** — click it and you're done.
+Open your editor, write some code. Switch back to GitHub Desktop. The **Changes** tab already lists everything. Write a summary, click **Commit to main**. Top bar now says **Push origin**. Click it and you're done.
 
 No `git add`, no `git push`. Everything is auto-staged. One click to upload.
 
@@ -143,72 +168,11 @@ Commit in the terminal, GitHub Desktop sees it. Commit in Desktop, the terminal 
 
 ---
 
-<a id="github-pages"></a>
-
-## GitHub Pages — My First Website
-
-This was my first detour outside of Git itself. Turns out Git quietly managed the whole thing anyway.
-
-### What I built
-
-Made the `andyttc05.github.io` repo. GitHub saw the name and turned on Pages automatically. Wrote everything in plain HTML and CSS — clean, readable, nothing fancy. Split it into `index.html` (EN) and `zh.html` with a card toggle to jump between them. Sprinkled in some Pull Quotes, fade-in animations, alternating backgrounds. Made it work on different screen sizes. Then spent way too long tracking down a Safari hover color bug on the contact links. Got it eventually.
-
-### What clicked
-
-| Concept | Takeaway |
-| :--- | :--- |
-| GitHub Pages | Name a repo `username.github.io` and it auto-deploys. Free domain |
-| Static sites | HTML + CSS. Opens in a browser. No server needed |
-| Bilingual design | Two files, a card toggle, page reloads on switch |
-| Design iteration | Edit in PyCharm, commit in Desktop, live in 30 seconds |
-
----
-
-## Core Git Concepts
-
-### What is Git?
-
-You know how you take a photo so you can look back at it later? Git is that, but for your code. You type `git commit` and it takes a snapshot of everything. Tomorrow you can flip back and see exactly what your code looked like. That's it. That's Git.
-
-### The four zones
-
-```
-Working Directory        ✍️ where I write code
-       ↓  git add        📋 "I want this one in the album"
-Staging Area             📸 lined up for the photo
-       ↓  git commit     📷 click! saved to the album
-Local Repository         📚 the photo album on my computer
-       ↓  git push       ☁️ uploaded to the cloud
-GitHub (Remote)          🌐 a backup that never gets lost
-```
-
-### My account
-
-| Field | Value |
-| :--- | :--- |
-| GitHub | [andyttc05](https://github.com/andyttc05) |
-| Email | andyttc2463@gmail.com |
-| Config | `~/.config/git/config` |
-
----
-
-## The Daily Three
-
-```bash
-git add .
-git commit -m "what I did"
-git push
-```
-
-Or skip the terminal. All three are one click each in GitHub Desktop.
-
----
-
 ## PyCharm + GitHub Desktop
 
 ### How they sync (or don't)
 
-The first time I noticed this I stared at the screen for a bit. They don't need me to sync them. They just look at the same folder. Like two people reading the same book — no passing notes.
+The first time I noticed this I stared at the screen for a bit. They don't need me to sync them. They just look at the same folder. Like two people reading the same book, no passing notes.
 
 ```
 PyCharm opens ~/Documents/my-first-repo     ✍️ writing code
@@ -224,7 +188,38 @@ You just need PyCharm to open this folder, and GitHub Desktop to open the same f
 
 ### The actual steps
 
-Write code in PyCharm. It auto-saves when you switch windows. Switch to GitHub Desktop — the changes are already listed on the left. Type a summary like "fixed that bug" or "login page done". Click **Commit to main**. The top bar now says **Push origin**. Click it. Done.
+Write code in PyCharm. It auto-saves when you switch windows. Switch to GitHub Desktop. The changes are already listed on the left. Type a summary like "fixed that bug" or "login page done". Click **Commit to main**. The top bar now says **Push origin**. Click it. Done.
+
+---
+
+## PyCharm Setup
+
+| Setting | Value | Path |
+| :--- | :--- | :--- |
+| Theme | Light (dark mode is overrated) | Settings → Appearance |
+| Font size | 15 | Settings → Editor → Font |
+| Auto-save | On window switch | Settings → System Settings |
+
+---
+
+<a id="github-pages"></a>
+
+## GitHub Pages: My First Website
+
+This was my first detour outside of Git itself. Didn't realize until later that Git was quietly handling the whole thing anyway.
+
+### What I built
+
+Made the `andyttc05.github.io` repo. GitHub saw the name and turned Pages on automatically. Wrote everything in plain HTML and CSS. No frameworks, no build tools, just a few files. Split into `index.html` (EN) and `zh.html` with a card toggle to jump between them. Threw in some Pull Quotes, fade-in animations, alternating section backgrounds. Made it work on different screen sizes. Then spent way too long hunting down a Safari hover color bug on the contact links. Got it eventually.
+
+### What clicked
+
+| Concept | Takeaway |
+| :--- | :--- |
+| GitHub Pages | Name a repo `username.github.io` and it auto-deploys. Free domain |
+| Static sites | HTML + CSS. Opens in a browser. No server needed |
+| Bilingual design | Two files, a card toggle, page reloads on switch |
+| Design iteration | Edit in PyCharm, commit in Desktop, live in 30 seconds |
 
 ---
 
@@ -258,21 +253,11 @@ This removes the file from staging but keeps it on disk.
 <summary>Pitfall 3: You can't lose a repo by moving it</summary>
 <br>
 
-A Git repo is just a folder with a hidden `.git` directory inside. That `.git` directory carries everything — your history, where it connects to, every snapshot.
+A Git repo is just a folder with a hidden `.git` directory inside. That `.git` directory carries everything: your history, where it connects to, every snapshot.
 
 You can drag the whole folder anywhere and it still works. Only thing to remember: GitHub Desktop needs **File → Add local repository** pointed to the new spot.
 
 </details>
-
----
-
-## PyCharm Setup
-
-| Setting | Value | Path |
-| :--- | :--- | :--- |
-| Theme | Light (dark mode is overrated) | Settings → Appearance |
-| Font size | 15 | Settings → Editor → Font |
-| Auto-save | On window switch | Settings → System Settings |
 
 ---
 
@@ -284,7 +269,7 @@ You can drag the whole folder anywhere and it still works. Only thing to remembe
 | **GitHub Desktop** | ✅ |
 | **PyCharm** 2026.1 (Light, font 15) | ✅ |
 | **GitHub Pages** → [andyttc05.github.io](https://andyttc05.github.io) | ✅ |
-| **Claude Code** | 🍑 |
+| **Claude Desktop** | |
 
 ### Key paths
 
@@ -314,7 +299,7 @@ Old config sits in `/tmp/`. It's not gone. Go get it if you change your mind.
 
 ## Rewriting Git History (Advanced)
 
-Be careful with this. It rewrites commit hashes, which breaks things for anyone who cloned your repo. Only use it if you accidentally committed something sensitive, or your commit history is a mess you want to clean up.
+Be smart about this one. Rewriting commit hashes breaks things for anyone who cloned your repo. Two reasons to use it: you accidentally committed a password or API key, or your commit history looks like a scratch pad and you want a do-over.
 
 ### Scenario A: Replace sensitive strings everywhere
 
@@ -391,16 +376,25 @@ git branch -D clean-slate
 
 ---
 
+## Learning Timeline
+
+| When | Milestone |
+| :--- | :--- |
+| Aug 1, noon | Typed my first `git commit`. Felt like clicking a shutter |
+| Aug 1, afternoon | First `git push`. Terminal, tokens, sweaty palms. The full thing |
+| Aug 1, evening | Found GitHub Desktop. Wait, buttons? No terminal? |
+| Aug 1, late night | `.gitignore` finally made sense. PyCharm and GitHub Desktop started talking to each other |
+| Aug 2, past midnight | Moved the repo to `~/Documents`… and it just followed. Git is wild |
+| Aug 2, daytime | Built a bilingual site with GitHub Pages → [have a look](https://andyttc05.github.io) |
+| Aug 2, afternoon | Made the repo bilingual: two READMEs, two sets of notes |
+| Aug 3, daytime | Gave all four docs a makeover: badges, better spacing, tighter writing |
+| Aug 3, evening | Renamed 学习笔记.md, tidied up the structure, learned what AI slop sounds like |
+
+---
+
 ## What's Next
 
-**Done.**
-GitHub Pages site, bilingual docs, README makeover.
-
-**Up next.**
-Git branching, first Python project, whatever I get curious about.
-
-**Someday.**
-VS Code, JavaScript, contributing to something open source.
+GitHub Pages site is up, both languages are in place, all the docs got a refresh. Next I want to figure out Git branching, and maybe start an actual Python project. After that? No plan. I'll follow whatever I get curious about. VS Code and JavaScript are somewhere on the horizon. Contributing to something open source sounds fun too. We'll see.
 
 ---
 

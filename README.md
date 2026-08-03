@@ -6,7 +6,7 @@
 
 # my-first-repo
 
-### *Started with "what even is Git" — and just kept going*
+### *Started with "what even is Git" and just kept going*
 
 </div>
 
@@ -27,7 +27,7 @@
 
 ## The Story
 
-One August afternoon, I sat down with a little peach-shaped angel named Momo and asked "okay, what even *is* Git?"
+One August afternoon, I sat down with a little helper named Momo and asked "okay, what even *is* Git?"
 
 Four hours later I'd pushed code to a website called GitHub. The next day I had my own bilingual website on the internet.
 
@@ -42,7 +42,7 @@ If you're starting from zero too, you're in the right place.
 | File | What you'll find |
 | :--- | :--- |
 | **[learning-notes.md](learning-notes.md)** | My full journal. Concepts, "ohhh" moments, facepalms, all of it |
-| **[学习笔记.md](学习笔记.md)** | Same journal, 中文版 |
+| **[learn-notes-zh.md](learn-notes-zh.md)** | Same journal, 中文版 |
 | **[.gitignore](.gitignore)** | Keeps editor junk out of the repo |
 
 ---
@@ -55,15 +55,13 @@ Every commit is a photo. You can always flip back to yesterday.
 **GitHub is your photo album in the cloud.**
 Show it off, keep it private, lose your laptop. The album stays safe.
 
-Your folder goes to `git add`, then `git commit`, then GitHub. Four stops. That's the whole ride.
-
-Every day is three words: `add .`, `commit -m`, `push`. That's the habit.
+Your folder → `git add` → `git commit` → GitHub. Four stops, that's the whole ride. Every day is three words: `add .`, `commit -m`, `push`.
 
 **.gitignore is a bouncer.** Tell it who can't come in. But if someone's already inside, you need `git rm --cached` to walk them out.
 
-Repos are suitcases. Pick up the folder, move it anywhere. The `.git` directory inside carries everything. History, remote links, all of it.
+Repos are suitcases. Grab the folder and drag it anywhere. The `.git` directory inside carries everything: history, remote links, the whole memory.
 
-**PyCharm and GitHub Desktop are best friends.** They look at the same folder. Save a file in PyCharm, GitHub Desktop already knows. Like magic, except it's just the filesystem doing its thing.
+**PyCharm and GitHub Desktop are best friends.** They're just looking at the same folder. Save in PyCharm, Desktop already knows. It feels like magic but it's really just the filesystem doing its thing.
 
 ---
 
@@ -75,7 +73,7 @@ Repos are suitcases. Pick up the folder, move it anywhere. The `.git` directory 
 | **GitHub Desktop** | The album, no terminal needed | ✅ |
 | **PyCharm** `2026.1` | Where I write code (Light theme, big font) | ✅ |
 | **GitHub Pages** | My corner of the internet → [take a look](https://andyttc05.github.io) | ✅ |
-| **Claude Code** | My AI buddy | 🍑 |
+| **Claude Desktop** | My AI buddy |
 
 ---
 
@@ -93,7 +91,7 @@ Repos are suitcases. Pick up the folder, move it anywhere. The `.git` directory 
 
 <div align="center">
 
-> This repo exists because a little peach angel named Momo sat with me, patiently explained things three times, and never once made me feel stupid.
+> This repo exists because a little helper named Momo sat with me, patiently explained things three times, and never once made me feel stupid.
 >
 > If you're learning too, you've got this. We all start somewhere.
 

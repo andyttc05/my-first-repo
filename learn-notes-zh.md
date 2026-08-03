@@ -6,7 +6,7 @@
 
 # 我的 Git 学习笔记
 
-### *从零到 Git/GitHub — 一个问题，一个答案*
+### *从零到 Git/GitHub。一个问题，一个答案。*
 
 </div>
 
@@ -15,7 +15,7 @@
 <p align="center">
   <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/在线网站-andyttc05.github.io-4c1?style=flat-square" alt="GitHub Pages"></a>
   <a href="https://github.com/andyttc05/my-first-repo/blob/main/learning-notes.md"><img src="https://img.shields.io/badge/笔记-English-blue?style=flat-square" alt="English"></a>
-  <img src="https://img.shields.io/badge/师傅-Momo_🍑-ff69b4?style=flat-square" alt="师傅">
+  <img src="https://img.shields.io/badge/师傅-Momo-ff69b4?style=flat-square" alt="帮手">
   <img src="https://img.shields.io/badge/始于-2026.08-lightgrey?style=flat-square" alt="始于">
 </p>
 
@@ -25,18 +25,31 @@
 
 ---
 
-## 学习时间线
+## 核心概念
 
-| 时间 | 里程碑 |
+### Git 是什么
+
+你拍照，回头能翻出来看。Git 就是给你的代码拍照。敲 `git commit`，它就拍一张快照。明天你能翻回去，看到"昨天这时候代码长什么样"。就这样，没了。
+
+### 四个区域
+
+```
+工作区            ✍️ 我写代码的地方
+  ↓  git add      📋 "这张照片我要了"
+暂存区            📸 排队等拍照
+  ↓  git commit   📷 咔嚓！存进相册
+本地仓库          📚 你电脑上的相册
+  ↓  git push     ☁️ 传到云端
+GitHub（云端）    🌐 永远不会丢的备份
+```
+
+### 我的账号
+
+| 项目 | 内容 |
 | :--- | :--- |
-| 8/1 中午 | 敲下人生第一个 `git commit`。像第一次按快门 |
-| 8/1 下午 | 第一次 `git push`。黑框框、token、手心出汗，全套 |
-| 8/1 晚上 | 发现 GitHub Desktop。等等——有按钮？不用终端？ |
-| 8/1 深夜 | `.gitignore` 终于通了。PyCharm 和 GitHub Desktop 开始互相认识了 |
-| 8/2 凌晨 | 把仓库从桌面拖到 Documents……它就这么跟着走了。Git 真离谱 |
-| 8/2 白天 | 从零建了中英双语的 GitHub Pages 主页 → [点开看看](https://andyttc05.github.io) |
-| 8/2 下午 | 仓库双语化，两套 README、两套笔记 |
-| 8/3 白天 | 给四份文档翻了个新——加徽章、调间距、每句引用都换成自己的话 |
+| GitHub | [andyttc05](https://github.com/andyttc05) |
+| 邮箱 | andyttc2463@gmail.com |
+| 配置路径 | `~/.config/git/config` |
 
 ---
 
@@ -78,7 +91,7 @@ git config --global user.email "你的邮箱"
 
 ## 第一次 Push 全流程
 
-第一天在这个环节踩了不少坑。写下来给后来的自己，也给任何一个刚起步的人。
+第一天在这个环节踩了不少坑。写下来给一礼拜后的自己，肯定会忘。
 
 ### ① 注册 GitHub 账号
 
@@ -86,7 +99,7 @@ git config --global user.email "你的邮箱"
 
 ### ② 在 GitHub 上建仓库
 
-点右上角 **+** → **New repository**。起个名字，选公开还是私有。不要勾 "Add a README file"——我们马上自己写。
+点右上角 **+** → **New repository**。起个名字，选公开还是私有。不要勾 "Add a README file"，我们马上自己写。
 
 点 **Create repository**，记下那个网址。长这样：`https://github.com/你的用户名/仓库名.git`。
 
@@ -112,6 +125,18 @@ GitHub → Settings → Developer settings → Personal access tokens → Tokens
 ### ⑤ 验证
 
 刷新 `https://github.com/你的用户名/仓库名`。代码飘在云端了。🎉
+
+---
+
+## 日常三连
+
+```bash
+git add .
+git commit -m "这次做了什么"
+git push
+```
+
+不想碰终端也行。上面三行，在 GitHub Desktop 里各点一下就好。
 
 ---
 
@@ -145,67 +170,6 @@ GitHub → Settings → Developer settings → Personal access tokens → Tokens
 
 ---
 
-<a id="github-pages-cn"></a>
-
-## GitHub Pages 建站
-
-这是我第一次跑偏去学 Git 之外的东西。回头看，Git 默默把过程都管了。
-
-### 做了什么
-
-建了 `andyttc05.github.io` 仓库，GitHub 一看这名字就把 Pages 打开了。拿纯 HTML 和 CSS 写了个 editorial 风格的主页，干干净净，不花里胡哨。拆成 `index.html`（英文）和 `zh.html`，做了个卡片按钮跳来跳去。加了 Pull Quote、渐入动效、交替背景，让它能随屏幕大小自适应。然后花了不少时间追一个 Safari 上 hover 颜色不对的 bug。最后搞定了。
-
-### 学到的
-
-| 概念 | 要点 |
-| :--- | :--- |
-| GitHub Pages | 仓库名叫 `用户名.github.io`，自动部署，免费域名 |
-| 静态网站 | HTML + CSS，浏览器直接打开，不需要服务器 |
-| 双语设计 | 两个文件，一个卡片切换，页面刷新跳转 |
-| 设计迭代 | PyCharm 改代码，Desktop commit，30 秒上线 |
-
----
-
-## 核心概念
-
-### Git 是什么
-
-你拍照，回头能翻出来看。Git 就是给你的代码拍照。敲 `git commit`，它就拍一张快照。明天你能翻回去，看到"昨天这时候代码长什么样"。就这样，没了。
-
-### 四个区域
-
-```
-工作区            ✍️ 我写代码的地方
-  ↓  git add      📋 "这张照片我要了"
-暂存区            📸 排队等拍照
-  ↓  git commit   📷 咔嚓！存进相册
-本地仓库          📚 你电脑上的相册
-  ↓  git push     ☁️ 传到云端
-GitHub（云端）    🌐 永远不会丢的备份
-```
-
-### 我的账号
-
-| 项目 | 内容 |
-| :--- | :--- |
-| GitHub | [andyttc05](https://github.com/andyttc05) |
-| 邮箱 | andyttc2463@gmail.com |
-| 配置路径 | `~/.config/git/config` |
-
----
-
-## 日常三连
-
-```bash
-git add .
-git commit -m "这次做了什么"
-git push
-```
-
-不想碰终端也行。上面三行，在 GitHub Desktop 里各点一下就好。
-
----
-
 ## PyCharm + GitHub Desktop 协同
 
 ### 它俩怎么同步的（其实不靠你同步）
@@ -227,6 +191,37 @@ PyCharm 打开 ~/Documents/my-first-repo     ✍️ 写代码
 ### 操作步骤
 
 PyCharm 里写代码，切窗口自动保存。切到 GitHub Desktop，左边 Changes 已经列好了。写一句 summary，比如"修了个 bug"或者"登录页收工"。点 **Commit to main**，顶部变 **Push origin**，再点一下。发出去了。
+
+---
+
+## PyCharm 配置
+
+| 设置项 | 值 | 位置 |
+| :--- | :--- | :--- |
+| 主题 | Light，暗黑模式算了 | Settings → Appearance |
+| 字体大小 | 15 | Settings → Editor → Font |
+| 自动保存 | 切换窗口时 | Settings → System Settings |
+
+---
+
+<a id="github-pages-cn"></a>
+
+## GitHub Pages 建站
+
+这是我第一次跑偏去学 Git 之外的东西。很久之后才意识到，Git 默默把整个过程都管了。
+
+### 做了什么
+
+建了 `andyttc05.github.io` 仓库，GitHub 一看这名字就把 Pages 打开了。拿纯 HTML 和 CSS 写的，没框架、没构建工具，几个文件往上一丢。拆成 `index.html`（英文）和 `zh.html`，做了个卡片按钮跳来跳去。塞了点 Pull Quote、渐入动效、交替背景，让它能随屏幕大小自适应。然后花了不少时间追一个 Safari 上 hover 颜色不对的 bug。最后搞定了。
+
+### 学到的
+
+| 概念 | 要点 |
+| :--- | :--- |
+| GitHub Pages | 仓库名叫 `用户名.github.io`，自动部署，免费域名 |
+| 静态网站 | HTML + CSS，浏览器直接打开，不需要服务器 |
+| 双语设计 | 两个文件，一个卡片切换，页面刷新跳转 |
+| 设计迭代 | PyCharm 改代码，Desktop commit，30 秒上线 |
 
 ---
 
@@ -260,21 +255,11 @@ git rm --cached -r 文件路径
 <summary>坑 3：仓库移动不会丢</summary>
 <br>
 
-Git 仓库就是个文件夹，里面藏了个 `.git` 目录。这目录装着所有东西——你的历史、连到哪、拍过的每一张快照。
+Git 仓库就是个文件夹，里面藏了个 `.git` 目录。这目录装着所有东西：你的历史、连到哪、拍过的每一张快照。
 
 整个文件夹拖到哪都行，一切照常。唯一要记住的：GitHub Desktop 需要 **File → Add local repository** 指到新位置。
 
 </details>
-
----
-
-## PyCharm 配置
-
-| 设置项 | 值 | 位置 |
-| :--- | :--- | :--- |
-| 主题 | Light，暗黑模式算了 | Settings → Appearance |
-| 字体大小 | 15 | Settings → Editor → Font |
-| 自动保存 | 切换窗口时 | Settings → System Settings |
 
 ---
 
@@ -286,7 +271,7 @@ Git 仓库就是个文件夹，里面藏了个 `.git` 目录。这目录装着�
 | **GitHub Desktop** | ✅ |
 | **PyCharm** 2026.1（Light，字体 15） | ✅ |
 | **GitHub Pages** → [andyttc05.github.io](https://andyttc05.github.io) | ✅ |
-| **Claude Code** | 🍑 |
+| **Claude Desktop** | |
 
 ### 关键路径
 
@@ -316,7 +301,7 @@ mv ~/Library/Application\ Support/GitHub\ Desktop /tmp/removed-github-desktop
 
 ## 改写 Git 历史（高级）
 
-想清楚再动手。这会改写 commit hash，别人 clone 过的就全乱了。只在两种情况下用：不小心把密码或者隐私信息交上去了，或者提交历史像草稿纸一样想重来。
+想清楚再动手。改写 commit hash，别人 clone 过的就全乱了。两种场景才值得：密码或者隐私信息不小心交上去了，或者提交历史跟草稿纸似的想重来。
 
 ### 场景 A：替换历史里的敏感字符串
 
@@ -393,16 +378,25 @@ git branch -D clean-slate
 
 ---
 
+## 学习时间线
+
+| 时间 | 里程碑 |
+| :--- | :--- |
+| 8/1 中午 | 敲下人生第一个 `git commit`。像第一次按快门 |
+| 8/1 下午 | 第一次 `git push`。黑框框、token、手心出汗，全套 |
+| 8/1 晚上 | 发现 GitHub Desktop。等等，有按钮？不用终端？ |
+| 8/1 深夜 | `.gitignore` 终于通了。PyCharm 和 GitHub Desktop 开始互相认识了 |
+| 8/2 凌晨 | 把仓库从桌面拖到 Documents……它就这么跟着走了。Git 真离谱 |
+| 8/2 白天 | 从零建了中英双语的 GitHub Pages 主页 → [点开看看](https://andyttc05.github.io) |
+| 8/2 下午 | 仓库双语化，两套 README、两套笔记 |
+| 8/3 白天 | 给四份文档翻了个新，加徽章、调间距 |
+| 8/3 晚上 | 改了中文文件名、整理了笔记结构、见识了什么是 AI 味 |
+
+---
+
 ## 下一步
 
-**已完成。**
-GitHub Pages 主页、双语笔记、README 翻新。
-
-**准备搞。**
-Git 分支、第一个 Python 项目、看看还能折腾点什么。
-
-**以后再说。**
-VS Code、JavaScript、给开源项目贡献点东西。
+GitHub Pages 上线了，双语笔记也到位了，文档都翻了一遍。接下来想搞 Git 分支，可能正经开个 Python 项目。再往后没计划，跟着好奇心走吧。VS Code 和 JavaScript 迟早会碰。能给开源项目贡献点东西也挺好。到时候再说。
 
 ---
 
