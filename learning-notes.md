@@ -140,6 +140,112 @@ Or skip the terminal. All three are one click each in GitHub Desktop.
 
 ---
 
+<a id="branches"></a>
+
+## Git Branches
+
+A branch is a parallel timeline. You fork off from `main`, experiment freely, and when it works — merge it back. `main` stays clean the whole time.
+
+### The concept
+
+```
+main    o---o---o-------o---o   never broken
+            |               |
+feature     o---o---o-------+   playground → merged
+```
+
+The feature branch starts as a copy of `main` at that point. Whatever you break there stays there. `main` doesn't even know it exists until you merge.
+
+### In GitHub Desktop (no terminal)
+
+**Create a branch**:
+
+`Current Branch` → type a name → `New Branch` (based on `main`)
+
+You're now on the new branch. The top bar shows its name.
+
+**Work on the branch**:
+
+Make changes in your editor. Commit like normal. The commits go to the branch, not `main`.
+
+**Push & create a Pull Request**:
+
+Click `Publish branch` → `Create Pull Request` → GitHub opens in your browser. Review the diff, add a description, click `Create pull request`.
+
+**Merge**:
+
+On the PR page, click `Merge pull request` → `Confirm merge`. The branch's changes are now part of `main`.
+
+**Switch back to main**:
+
+`Current Branch` → pick `main`. Click `Fetch origin` to pull in the merged changes.
+
+### The whole flow at a glance
+
+```
+branch → changes → commit → push → PR → merge
+   ↑                                       │
+   └─────────── back to main ──────────────┘
+```
+
+### Merge a branch (without PR, locally)
+
+Sometimes you don't need a Pull Request — just merge straight into `main`:
+
+1. Switch to `main`: `Current Branch` → pick `main`
+2. Menu bar: **Branch** → **Merge into Current Branch…**
+3. Pick your feature branch from the list → click **Merge**
+
+Done. The branch's commits are now on `main`. Push `main` to sync with GitHub.
+
+### Delete a branch (after merge)
+
+Once merged, the branch is dead weight. Clean it up:
+
+1. `Current Branch` → right-click the branch name
+2. Click **Delete…**
+3. Confirm
+
+Or from the menu: **Branch** → **Delete…** → pick the branch.
+
+> 💡 GitHub Desktop will warn you if the branch hasn't been merged yet. That's a safety net — double-check before deleting.
+
+### Discard a branch (abandon without merging)
+
+Started something, realized it's the wrong direction, don't want to merge?
+
+1. Switch back to `main`: `Current Branch` → pick `main`
+2. `Current Branch` → right-click the unwanted branch → **Delete…**
+3. Confirm
+
+All commits on that branch are gone. The files on `main` never changed — it's like the branch never happened.
+
+> ⚠️ If you already pushed the branch to GitHub, deleting it locally leaves the remote copy. Go to GitHub → the branch page → delete it there too.
+
+| Scenario | Action |
+| :--- | :--- |
+| Branch done, merged via PR | Delete it — local and remote |
+| Branch done, merged locally | Delete it |
+| Branch abandoned, not merged | Delete it — `main` was never touched |
+| Branch pushed but not merged | Delete local + remote |
+
+### Stash: a hidden drawer for in-progress work
+
+```text
+  work in progress
+       ↓ git stash
+  [hidden drawer]        ← changes tucked away, working tree clean
+       ↓ switch branches / pull / do other things
+       ↓ git stash pop
+  work in progress       ← changes come back, keep going
+```
+
+`git stash` is like putting half-written changes in a drawer. The working tree goes clean — you can switch branches, pull new code, do whatever. `git stash pop` pulls them back out.
+
+This happens when you have uncommitted edits but need to switch context. GitHub Desktop shows it in the "Stashed Changes" panel — Restore to bring them back, Discard to throw them away.
+
+---
+
 <a id="github-desktop"></a>
 
 ## GitHub Desktop
@@ -235,6 +341,139 @@ Write code in PyCharm. It auto-saves when you switch windows. Switch to GitHub D
 | Theme | Light (dark mode is overrated) | Settings → Appearance |
 | Font size | 15 | Settings → Editor → Font |
 | Auto-save | On window switch | Settings → System Settings |
+
+---
+
+<a id="workbuddy"></a>
+
+## WorkBuddy
+
+A desktop AI agent — think Claude, but workspace-native. Each project lives in its own workspace folder, and the agent can read your files, run commands, edit code, and talk to external services through connectors.
+
+### Workspace model
+
+WorkBuddy organizes work by workspace. Each workspace is a folder like `~/WorkBuddy/2026-08-03-16-17-13/`. Inside it: your project files, a `.workbuddy/` folder for memory and logs, and the agent's full context.
+
+Switching projects is opening a new workspace. Everything is isolated. No cross-contamination.
+
+### The three superpowers
+
+| Power | What it does | Real example |
+| :--- | :--- | :--- |
+| **Skills** | Pre-built workflows the agent loads on demand | `momo` skill sets my assistant's personality; `data-maintenance` runs cleanup |
+| **Automations** | Scheduled tasks that run on a timer | Daily self-evolution audit, system cleanup at 2 AM |
+| **Connectors (MCP)** | Plug into external services | Lexiang knowledge base, Tencent Docs, WeChat Pay, Agent Mail |
+
+### My active connectors
+
+| Connector | What I use it for |
+| :--- | :--- |
+| **Lexiang** | Knowledge base — search, read, write docs |
+| **Tencent Docs** | Online document creation and editing |
+| **WeChat Pay** | Payment and agent card management |
+| **Agent Mail** | Email in the agent interface |
+| **ima** | Personal knowledge base search |
+
+### How I actually use it
+
+WorkBuddy is where I do my structured work. Not quick one-offs — the stuff that needs a plan, multiple steps, and a record of what happened.
+
+**Daily rhythm**: open WorkBuddy → pick up where I left off → agent reads my workspace memory → do the work → memory auto-logged.
+
+**Learning Git with WorkBuddy**: I ask Momo (my WorkBuddy persona) to explain concepts, edit my notes in real time, and guide me through operations. WorkBuddy reads my entire `my-first-repo` folder, so it always knows the context.
+
+**The real win**: the `.workbuddy/memory/` folder. Every session leaves a daily log. The agent remembers what we talked about yesterday, what we decided, what's still open. I never have to re-explain.
+
+### Key paths
+
+| What | Where |
+| :--- | :--- |
+| App | `/Applications/WorkBuddy.app` |
+| Workspaces | `~/WorkBuddy/` |
+| Memory (per workspace) | `.workbuddy/memory/` |
+| Skills (user-level) | `~/.workbuddy/skills/` |
+| Global memory | `~/.workbuddy/MEMORY.md` |
+
+---
+
+<a id="claude-code"></a>
+
+## Claude Code
+
+Anthropic's command-line AI coding agent. Unlike the desktop chat app, Claude Code lives in your terminal — you `cd` into a project and run `claude`, and it reads your entire codebase and starts helping.
+
+### Why Claude Code
+
+It's a terminal-native tool. No GUI, no separate window — just you, your shell, and an agent that knows your project. Great for quick edits, code reviews, and terminal-heavy workflows where you're already in the zone.
+
+### Installation
+
+```bash
+# Install via npm
+npm install -g @anthropic-ai/claude-code
+
+# Or with Homebrew
+brew install claude-code
+
+# Start it in any project
+cd your-project
+claude
+```
+
+### What it can do
+
+| Capability | How it helps |
+| :--- | :--- |
+| Full repo context | Reads your entire project folder at once |
+| Terminal-native | Runs shell commands, git operations, build scripts |
+| Direct edits | Writes and modifies files in place |
+| Git integration | Understands branches, diffs, and commit history |
+| Multi-model | Claude by default, switchable via CC Switch |
+
+### Using CC Switch to connect DeepSeek
+
+Claude Code uses Claude's own model by default. CC Switch lets you swap in DeepSeek (or others):
+
+1. Download [CC Switch](https://github.com/cc-switch/cc-switch) — a model switcher for Claude Code
+2. Configure your DeepSeek API key following the setup guide
+3. Restart Claude Code — toggle between Claude and DeepSeek
+
+Same CLI, pick the model that fits the task.
+
+### Claude Code vs WorkBuddy
+
+| | Claude Code | WorkBuddy |
+| :--- | :--- | :--- |
+| Interface | Terminal CLI | Desktop app |
+| Best for | Quick coding help, terminal-native | Structured projects, workflows |
+| State | Stateless per session | Persistent memory per workspace |
+| Strengths | Speed, simplicity, git-aware | Automation, connectors, memory |
+
+They complement each other. Claude Code is my quick-draw coding buddy. WorkBuddy is where I plan, organize, and log everything.
+
+### My tool chain
+
+```
+WorkBuddy               🧠 planning, editing, automation
+       ↓
+Claude Code             🔧 quick coding, model switch
+       ↓
+PyCharm                 💻 review & hand-edit code
+       ↓
+GitHub Desktop          🚀 commit & push to GitHub
+```
+
+All four tools share the same project folders. Each one does what it's best at.
+
+### Quick setup check
+
+```bash
+# Make sure Claude Code is installed
+claude --version
+
+# Grant terminal access if needed
+# System Settings → Privacy & Security → Developer Tools → Terminal
+```
 
 ---
 
@@ -337,11 +576,12 @@ You can drag the whole folder anywhere and it still works. Only thing to remembe
 
 | Tool | Status |
 | :--- | :---: |
-| **Git** v2.50.1 | ✅ |
+| **WorkBuddy** | ✅ |
+| **Claude Code** | ✅ |
 | **GitHub Desktop** | ✅ |
-| **PyCharm** 2026.1 (Light, font 15) | ✅ |
+| **PyCharm** (Light, font 15) | ✅ |
 | **GitHub Pages** → [andyttc05.github.io](https://andyttc05.github.io) | ✅ |
-| **Claude Desktop** | |
+| **Git** | ✅ |
 
 ### Key paths
 
@@ -448,25 +688,9 @@ git branch -D clean-slate
 
 ---
 
-## Learning Timeline
-
-| When | Milestone |
-| :--- | :--- |
-| Aug 1, noon | Typed my first `git commit`. Felt like clicking a shutter |
-| Aug 1, afternoon | First `git push`. Terminal, tokens, sweaty palms. The full thing |
-| Aug 1, evening | Found GitHub Desktop. Wait, buttons? No terminal? |
-| Aug 1, late night | `.gitignore` finally made sense. PyCharm and GitHub Desktop started talking to each other |
-| Aug 2, past midnight | Moved the repo to `~/Documents`… and it just followed. Git is wild |
-| Aug 2, afternoon | Built a bilingual site with GitHub Pages → [have a look](https://andyttc05.github.io) |
-| Aug 2, afternoon | Made the repo bilingual: two READMEs, two sets of notes |
-| Aug 3, afternoon | Gave all four docs a makeover, tidied up the structure |
-| Aug 3, afternoon | Learned Discard Changes and Reset to Commit — no more re-cloning when things go sideways |
-
----
-
 ## What's Next
 
-GitHub Pages site is up, both languages are in place, all the docs got a refresh. Next I want to figure out Git branching, and maybe start an actual Python project. After that? No plan. I'll follow whatever I get curious about. VS Code and JavaScript are somewhere on the horizon. Contributing to something open source sounds fun too. We'll see.
+Branches are in the toolbox now. Next up: probably an actual Python project — start small, use branches, build something that works. After that, maybe GitHub Actions to auto-deploy the website on every push. Or maybe VS Code instead of PyCharm for a week, just to see. No rush. Whatever feels fun next.
 
 ---
 

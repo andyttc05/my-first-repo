@@ -69,11 +69,12 @@ Repos are suitcases. Grab the folder and drag it anywhere. The `.git` directory 
 
 | What I use | What it does | How it's going |
 | :--- | :--- | :---: |
-| **Git** `2.50.1` | The camera | ✅ |
+| **WorkBuddy** | My primary AI agent | ✅ |
+| **Claude Code** | My AI sidekick | ✅ |
 | **GitHub Desktop** | The album, no terminal needed | ✅ |
-| **PyCharm** `2026.1` | Where I write code (Light theme, big font) | ✅ |
+| **PyCharm** | Where I write code (Light theme, big font) | ✅ |
 | **GitHub Pages** | My corner of the internet → [take a look](https://andyttc05.github.io) | ✅ |
-| **Claude Desktop** | My AI buddy |
+| **Git** | The camera | ✅ |
 
 ---
 
