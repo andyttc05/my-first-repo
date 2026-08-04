@@ -570,6 +570,16 @@ You can drag the whole folder anywhere and it still works. Only thing to remembe
 
 </details>
 
+<details open>
+<summary>Pitfall 4: Fetch doesn't update your files</summary>
+<br>
+
+After you merge a PR on GitHub, your local `main` still points at the old commit. `Fetch origin` only downloads the new data — your working files stay frozen.
+
+The fix: after merging on GitHub, switch to `main` in GitHub Desktop and click **Pull origin** (not Fetch). Pull = Fetch + Merge. Your local files catch up instantly.
+
+</details>
+
 ---
 
 ## Tool Chain

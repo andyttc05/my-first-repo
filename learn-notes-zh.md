@@ -572,6 +572,16 @@ Git 仓库就是个文件夹，里面藏了个 `.git` 目录。这目录装着�
 
 </details>
 
+<details open>
+<summary>坑 4：Fetch 不会更新你本地的文件</summary>
+<br>
+
+在 GitHub 网页上 merge 了 PR 之后，本地的 `main` 还在旧的 commit 上。`Fetch origin` 只是"看看"远端有没有新东西——文件本身不动。
+
+正确做法：GitHub 上 merge 完，切到 `main`，点 **Pull origin**（不是 Fetch）。Pull = Fetch + Merge，本地文件立刻跟上。
+
+</details>
+
 ---
 
 ## 工具链
