@@ -69,11 +69,12 @@
 
 | 我在用什么 | 干嘛的 | 状态 |
 | :--- | :--- | :---: |
-| **Git** `2.50.1` | 那台相机 | ✅ |
+| **WorkBuddy** | 我的主力 AI 助手 | ✅ |
+| **Claude Code** | 我的 AI 副手 | ✅ |
 | **GitHub Desktop** | 相册，不用终端 | ✅ |
-| **PyCharm** `2026.1` | 写代码的地方（浅色主题、大字） | ✅ |
+| **PyCharm** | 写代码的地方（浅色主题、大字） | ✅ |
 | **GitHub Pages** | 属于我的一小块互联网 → [去看看](https://andyttc05.github.io) | ✅ |
-| **Claude Desktop** | 我的 AI 搭子 |
+| **Git** | 那台相机 | ✅ |
 
 ---
 

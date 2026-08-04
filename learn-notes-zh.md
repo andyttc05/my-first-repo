@@ -34,13 +34,13 @@
 ### 四个区域
 
 ```
-工作区            ✍️ 我写代码的地方
-  ↓  git add      📋 "这张照片我要了"
-暂存区            📸 排队等拍照
-  ↓  git commit   📷 咔嚓！存进相册
-本地仓库          📚 你电脑上的相册
-  ↓  git push     ☁️ 传到云端
-GitHub（云端）    🌐 永远不会丢的备份
+Working Directory        ✍️ where I write code
+       ↓  git add        📋 "I want this one in the album"
+Staging Area             📸 lined up for the photo
+       ↓  git commit     📷 click! saved to the album
+Local Repository         📚 the photo album on my computer
+       ↓  git push       ☁️ uploaded to the cloud
+GitHub (Remote)          🌐 a backup that never gets lost
 ```
 
 ### 我的账号
@@ -79,8 +79,8 @@ git --version
 ### 第一件事：让 Git 知道你是谁
 
 ```bash
-git config --global user.name "你的名字"
-git config --global user.email "你的邮箱"
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
 ```
 
 ⚠️ 邮箱得和 GitHub 注册的一致。不然你的 commit 会像个幽灵，挂不上头像。
@@ -106,11 +106,11 @@ git config --global user.email "你的邮箱"
 ### ③ 让本地文件夹连上 GitHub
 
 ```bash
-cd 你的项目文件夹
+cd your-project-folder
 git init
 git add .
 git commit -m "first commit"
-git remote add origin 刚才复制的网址
+git remote add origin <the-url-you-copied>
 git push -u origin main
 ```
 
@@ -132,11 +132,102 @@ GitHub → Settings → Developer settings → Personal access tokens → Tokens
 
 ```bash
 git add .
-git commit -m "这次做了什么"
+git commit -m "what I did"
 git push
 ```
 
 不想碰终端也行。上面三行，在 GitHub Desktop 里各点一下就好。
+
+---
+
+<a id="branches-cn"></a>
+
+## Git 分支
+
+分支就是一个平行时间线。你从 `main` 分叉出去，随便折腾。搞定了——合回来。`main` 全程干干净净。
+
+### 概念
+
+```
+main    o---o---o-------o---o   never broken
+            |               |
+feature     o---o---o-------+   playground → merged
+```
+
+feature 分支是 `main` 在那个时间点的拷贝。你在上面不管怎么炸，`main` 都不知道。直到你 merge 的那一刻。
+
+### GitHub Desktop 操作（全程鼠标）
+
+**创建分支**：
+
+`Current Branch` → 输入名字 → `New Branch`（选基于 `main`）
+
+顶部栏显示新分支名字，你就已经在分支上了。
+
+**在分支上干活**：
+
+编辑器里正常改代码。commit 照常。提交记录只写在这条分支上，不影响 `main`。
+
+**Push + 发 Pull Request**：
+
+点 `Publish branch` → `Create Pull Request` → 浏览器打开 GitHub。检查 diff，写个说明，点 `Create pull request`。
+
+**合并**：
+
+PR 页面点 `Merge pull request` → `Confirm merge`。分支上的改动就进 `main` 了。
+
+**切回 main**：
+
+`Current Branch` → 选 `main`。点 `Fetch origin` 把合并后的内容拉下来。
+
+### 完整流程速览
+
+```
+branch → changes → commit → push → PR → merge
+   ↑                                       │
+   └─────────── back to main ──────────────┘
+```
+
+### 本地合并（不用 PR）
+
+不需要发 Pull Request，直接合进 `main` 也行：
+
+1. 切到 `main`：`Current Branch` → 选 `main`
+2. 菜单栏：**Branch** → **Merge into Current Branch…**
+3. 从列表里选你要合的分支 → 点 **Merge**
+
+搞定。分支上的 commit 都到 `main` 了。Push 一下 `main` 同步到 GitHub。
+
+### 删除分支（合并完之后）
+
+合并完了，分支就成了空壳。清理掉：
+
+1. `Current Branch` → 右键分支名字
+2. 点 **Delete…**
+3. 确认
+
+或者菜单栏：**Branch** → **Delete…** → 选分支。
+
+> 💡 如果分支还没合并，GitHub Desktop 会弹出警告。这是安全网——删之前再确认一下。
+
+### 丢弃分支（不改了，放弃合并）
+
+开了一条分支，写着写着发现方向不对，不想合了？
+
+1. 先切回 `main`：`Current Branch` → 选 `main`
+2. `Current Branch` → 右键那条废掉的分支 → **Delete…**
+3. 确认
+
+分支上的所有 commit 就没了。`main` 从头到尾没被碰过——就像那条分支从来没存在过。
+
+> ⚠️ 如果已经把分支 push 到 GitHub 了，本地删除只删本地。去 GitHub 网页 → 分支页面 → 也把它删掉。
+
+| 场景 | 操作 |
+| :--- | :--- |
+| 分支搞定，PR 合并了 | 删掉——本地和远程都删 |
+| 分支搞定，本地合并了 | 删掉 |
+| 分支废了，不想合并 | 删掉——`main` 本来就没被碰过 |
+| 分支 push 了但没合 | 删本地 + 删远程 |
 
 ---
 
@@ -213,11 +304,11 @@ git push
 第一次发现的时候我愣了好几秒。它们居然不用我手动同步。就共享同一个文件夹。像两个人看同一本书，不用传纸条。
 
 ```
-PyCharm 打开 ~/Documents/my-first-repo     ✍️ 写代码
-              ↓ 保存文件
-     my-first-repo 文件夹                  📁 书在这里
-              ↓ 自动检测
-  GitHub Desktop 显示改动 ✓                👀 它已经知道了
+PyCharm opens ~/Documents/my-first-repo     ✍️ writing code
+              ↓ saves files
+     my-first-repo folder                   📁 the book
+              ↓ auto-detected
+  GitHub Desktop shows changes ✓            👀 already knows
 ```
 
 没有连接线、没有配置文件、没有同步按钮。文件夹变了，它就知道了。就这样。
@@ -237,6 +328,139 @@ PyCharm 里写代码，切窗口自动保存。切到 GitHub Desktop，左边 Ch
 | 主题 | Light，暗黑模式算了 | Settings → Appearance |
 | 字体大小 | 15 | Settings → Editor → Font |
 | 自动保存 | 切换窗口时 | Settings → System Settings |
+
+---
+
+<a id="workbuddy-cn"></a>
+
+## WorkBuddy
+
+一个桌面 AI 智能体——你可以理解为 Claude，但以工作区为原生单位。每个项目独立一个工作区文件夹，智能体能读你的文件、跑命令、改代码、通过连接器接通外部服务。
+
+### 工作区模式
+
+WorkBuddy 用工作区来组织项目。每个工作区是一个文件夹，比如 `~/WorkBuddy/2026-08-03-16-17-13/`。里面有你的项目文件、`.workbuddy/` 目录存记忆和日志，还有智能体的完整上下文。
+
+切换项目就是打开一个新工作区。互不干扰，干干净净。
+
+### 三大核心能力
+
+| 能力 | 做什么 | 实际例子 |
+| :--- | :--- | :--- |
+| **Skills 技能** | 按需加载的预设工作流 | `momo` 技能设定助手人格；`data-maintenance` 跑系统清理 |
+| **自动化** | 按定时器运行的任务 | 每日自我进化审查、凌晨 2 点系统清理 |
+| **连接器（MCP）** | 接通外部服务 | 乐享知识库、腾讯文档、微信支付、智能体邮箱 |
+
+### 我接入了哪些连接器
+
+| 连接器 | 用途 |
+| :--- | :--- |
+| **乐享知识库** | 搜索、阅读、写入文档 |
+| **腾讯文档** | 在线创建编辑文档 |
+| **微信支付** | 支付和智能体卡片管理 |
+| **Agent Mail** | 在智能体界面收发邮件 |
+| **ima 知识库** | 个人知识库搜索 |
+
+### 我实际上怎么用它
+
+WorkBuddy 是我做正经结构化工作的地方。不是那种随口一问的——是需要计划、多步骤、留下记录的那种。
+
+**日常节奏**：打开 WorkBuddy → 接着上次的进度 → 智能体自动读取工作区记忆 → 干活 → 记忆自动归档。
+
+**用它学 Git**：我问 Momo（我的 WorkBuddy 人格）解释概念、实时编辑笔记、引导操作。WorkBuddy 能读我整个 `my-first-repo` 文件夹，永远知道上下文。
+
+**真正好用的地方**：`.workbuddy/memory/` 目录。每个工作阶段都留下每日日志。智能体会记得昨天聊了什么、定了什么、还有什么没做完。我从来不用重新解释一遍。
+
+### 关键路径
+
+| 项目 | 路径 |
+| :--- | :--- |
+| 应用 | `/Applications/WorkBuddy.app` |
+| 工作区 | `~/WorkBuddy/` |
+| 记忆（按工作区） | `.workbuddy/memory/` |
+| 技能（用户级） | `~/.workbuddy/skills/` |
+| 全局记忆 | `~/.workbuddy/MEMORY.md` |
+
+---
+
+<a id="claude-code-cn"></a>
+
+## Claude Code
+
+Anthropic 出品的命令行 AI 编程智能体。跟桌面聊天应用不一样，Claude Code 住在终端里——`cd` 进项目跑个 `claude`，它就吃进你整个代码库，开始帮你干活。
+
+### 为什么是 Claude Code
+
+它是终端原生的。没有 GUI，没有独立的窗口——就是你的黑框框 + 一个懂你项目的智能体。适合快速改代码、code review，还有你已经在终端里的时候随手叫一下。
+
+### 安装
+
+```bash
+# npm 安装
+npm install -g @anthropic-ai/claude-code
+
+# 或者 Homebrew
+brew install claude-code
+
+# 在任意项目里启动
+cd 你的项目
+claude
+```
+
+### 能做什么
+
+| 能力 | 对我有什么用 |
+| :--- | :--- |
+| 全项目上下文 | 一次吃掉整个文件夹，不用一个一个指 |
+| 终端原生 | 跑 shell 命令、git 操作、构建脚本 |
+| 直接改文件 | 原地读写，不绕弯 |
+| Git 集成 | 懂分支、diff、提交历史 |
+| 多模型 | 默认 Claude，CC Switch 一键切 |
+
+### 用 CC Switch 接入 DeepSeek
+
+Claude Code 默认用 Claude 自己的模型。CC Switch 可以切 DeepSeek（或其他）：
+
+1. 下载 [CC Switch](https://github.com/cc-switch/cc-switch) ——给 Claude Code 切换后端模型的工具
+2. 按说明配好 DeepSeek API Key
+3. 重启 Claude Code，在 Claude 和 DeepSeek 之间随意切
+
+同一个终端，根据任务选最合适的模型。
+
+### Claude Code vs WorkBuddy
+
+| | Claude Code | WorkBuddy |
+| :--- | :--- | :--- |
+| 界面 | 终端 CLI | 桌面应用 |
+| 最适合 | 快速编程、终端原生操作 | 结构化项目、复杂工作流 |
+| 状态 | 每次对话无记忆 | 按工作区持久化记忆 |
+| 强项 | 快、简单、懂 Git | 自动化、连接器、记忆系统 |
+
+互补关系。Claude Code 是我的快刀，随手拔。WorkBuddy 是我的工作台，规划、组织、记录。
+
+### 我的工具链
+
+```
+WorkBuddy               🧠 planning, editing, automation
+       ↓
+Claude Code             🔧 quick coding, model switch
+       ↓
+PyCharm                 💻 review & hand-edit code
+       ↓
+GitHub Desktop          🚀 commit & push to GitHub
+```
+
+四个工具共享同一个项目文件夹。各干各的强项，不打架。
+
+### 快速检查
+
+```bash
+# 确认装好了
+claude --version
+
+# 如果需要，给终端开权限
+# 系统设置 → 隐私与安全性 → 开发者工具 → 终端
+```
 
 ---
 
@@ -316,7 +540,7 @@ commit + push 完了，工作区安安静静。"No local changes" 是 Git 在说
 要脱钩：
 
 ```bash
-git rm --cached -r 文件路径
+git rm --cached -r path/to/file
 ```
 
 文件还在本地，只是从暂存区拿下来。
@@ -339,11 +563,12 @@ Git 仓库就是个文件夹，里面藏了个 `.git` 目录。这目录装着�
 
 | 工具 | 状态 |
 | :--- | :---: |
-| **Git** v2.50.1 | ✅ |
+| **WorkBuddy** | ✅ |
+| **Claude Code** | ✅ |
 | **GitHub Desktop** | ✅ |
-| **PyCharm** 2026.1（Light，字体 15） | ✅ |
+| **PyCharm**（Light，字体 15） | ✅ |
 | **GitHub Pages** → [andyttc05.github.io](https://andyttc05.github.io) | ✅ |
-| **Claude Desktop** | |
+| **Git** | ✅ |
 
 ### 关键路径
 
@@ -381,7 +606,7 @@ mv ~/Library/Application\ Support/GitHub\ Desktop /tmp/removed-github-desktop
 cd ~/path/to/your-repo
 
 git filter-branch --force --tree-filter \
-  "grep -rl '要被替换的字符串' . 2>/dev/null | xargs -I{} sed -i '' 's|旧字符串|新字符串|g' {}" \
+  "grep -rl 'string-to-replace' . 2>/dev/null | xargs -I{} sed -i '' 's|old-string|new-string|g' {}" \
   --prune-empty -- --all
 ```
 
@@ -417,21 +642,21 @@ git branch -D clean-slate
 ```bash
 cd ~/path/to/your-repo
 
-# 替换历史字符串
+# Replace sensitive strings
 git filter-branch --force --tree-filter \
-  "grep -rl '/Users/你的名字/' . 2>/dev/null | xargs -I{} sed -i '' 's|/Users/你的名字/|~/|g' {}" \
+  "grep -rl '/Users/your-name/' . 2>/dev/null | xargs -I{} sed -i '' 's|/Users/your-name/|~/|g' {}" \
   --prune-empty -- --all
 
-# 推送干净版本
+# Push cleaned version
 git push --force-with-lease origin main
 
-# 或者干脆清零，只留当前文件
+# Or nuke everything, keep only current files
 git checkout --orphan clean-slate
 git add -A
 git commit -m "clean slate"
 git push --force origin clean-slate:main
 
-# 清理
+# Clean up
 git checkout main
 git reset --hard origin/main
 git branch -D clean-slate
@@ -450,25 +675,9 @@ git branch -D clean-slate
 
 ---
 
-## 学习时间线
-
-| 时间 | 里程碑 |
-| :--- | :--- |
-| 8/1 中午 | 敲下人生第一个 `git commit`。像第一次按快门 |
-| 8/1 下午 | 第一次 `git push`。黑框框、token、手心出汗，全套 |
-| 8/1 晚上 | 发现 GitHub Desktop。等等，有按钮？不用终端？ |
-| 8/1 深夜 | `.gitignore` 终于通了。PyCharm 和 GitHub Desktop 开始互相认识了 |
-| 8/2 凌晨 | 把仓库从桌面拖到 Documents……它就这么跟着走了。Git 真离谱 |
-| 8/2 下午 | 从零建了中英双语的 GitHub Pages 主页 → [点开看看](https://andyttc05.github.io) |
-| 8/2 下午 | 仓库双语化，两套 README、两套笔记 |
-| 8/3 下午 | 给四份文档翻了个新、整理了笔记结构 |
-| 8/3 下午 | 学会 Discard Changes 和 Reset to Commit，还原云端版本再也不用重新 clone |
-
----
-
 ## 下一步
 
-GitHub Pages 上线了，双语笔记也到位了，文档都翻了一遍。接下来想搞 Git 分支，可能正经开个 Python 项目。再往后没计划，跟着好奇心走吧。VS Code 和 JavaScript 迟早会碰。能给开源项目贡献点东西也挺好。到时候再说。
+分支已经会了。接下来：正经开个 Python 小项目——从小开始，用分支管版本，做一个能跑的东西。之后可能搞 GitHub Actions，每次 push 自动部署网站。或者换 VS Code 用一周，换换口味。不赶时间，想玩什么就玩什么。
 
 ---
 
