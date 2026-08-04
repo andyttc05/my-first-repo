@@ -13,8 +13,7 @@
 <br>
 
 <p align="center">
-  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/在线网站-andyttc05.github.io-brightgreen?style=flat-square" alt="GitHub Pages"></a>
-  <a href="https://github.com/andyttc05/my-first-repo/blob/main/README.md"><img src="https://img.shields.io/badge/README-English-%233498db?style=flat-square" alt="English"></a>
+  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/在线网站-andyttc05.github.io-3498db?style=flat-square" alt="GitHub Pages"></a>
   <a href="https://github.com/andyttc05/my-first-repo/blob/main/LICENSE"><img src="https://img.shields.io/badge/协议-MIT-blueviolet?style=flat-square" alt="License"></a>
   <a href="https://www.bilibili.com/video/BV1ySLc6QEcB"><img src="https://img.shields.io/badge/参考资料-B站_@技术爬爬虾-FB7299?style=flat-square&logo=bilibili" alt="参考资料"></a>
 </p>

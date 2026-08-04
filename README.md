@@ -13,10 +13,9 @@
 <br>
 
 <p align="center">
-  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/Live_Site-andyttc05.github.io-brightgreen?style=flat-square" alt="GitHub Pages"></a>
-  <a href="https://github.com/andyttc05/my-first-repo/blob/main/README_zh.md"><img src="https://img.shields.io/badge/README-中文-%233498db?style=flat-square" alt="中文"></a>
+  <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/Live_Site-andyttc05.github.io-3498db?style=flat-square" alt="GitHub Pages"></a>
   <a href="https://github.com/andyttc05/my-first-repo/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blueviolet?style=flat-square" alt="License"></a>
-  <a href="https://www.bilibili.com/video/BV1ySLc6QEcB"><img src="https://img.shields.io/badge/参考资料-B站_@技术爬爬虾-FB7299?style=flat-square&logo=bilibili" alt="视频来源"></a>
+  <a href="https://www.bilibili.com/video/BV1ySLc6QEcB"><img src="https://img.shields.io/badge/Reference-Bilibili_@技术爬爬虾-FB7299?style=flat-square&logo=bilibili" alt="Video source"></a>
 </p>
 
 <br>
