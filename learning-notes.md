@@ -229,6 +229,21 @@ All commits on that branch are gone. The files on `main` never changed — it's 
 | Branch abandoned, not merged | Delete it — `main` was never touched |
 | Branch pushed but not merged | Delete local + remote |
 
+### Stash: a hidden drawer for in-progress work
+
+```text
+  work in progress
+       ↓ git stash
+  [hidden drawer]        ← changes tucked away, working tree clean
+       ↓ switch branches / pull / do other things
+       ↓ git stash pop
+  work in progress       ← changes come back, keep going
+```
+
+`git stash` is like putting half-written changes in a drawer. The working tree goes clean — you can switch branches, pull new code, do whatever. `git stash pop` pulls them back out.
+
+This happens when you have uncommitted edits but need to switch context. GitHub Desktop shows it in the "Stashed Changes" panel — Restore to bring them back, Discard to throw them away.
+
 ---
 
 <a id="github-desktop"></a>

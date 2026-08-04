@@ -229,6 +229,21 @@ branch → changes → commit → push → PR → merge
 | 分支废了，不想合并 | 删掉——`main` 本来就没被碰过 |
 | 分支 push 了但没合 | 删本地 + 删远程 |
 
+### Stash：没写完的改动先收起来
+
+```text
+  改动到一半
+       ↓ git stash
+  [隐藏抽屉]             ← 改动收好，工作区变干净
+       ↓ 切分支 / pull / 干别的事
+       ↓ git stash pop
+  改动到一半             ← 改动拿回来，继续写
+```
+
+`git stash` 就像把改了一半的东西塞进抽屉。工作区瞬间干净——想切分支、pull 新代码、干什么都行。`git stash pop` 再拿回来。
+
+它特别适合这种场景：正在分支上改代码，突然需要切到别的地方看一眼，但当前改动还没到能 commit 的程度。GitHub Desktop 左下角有 "Stashed Changes" 面板——Restore 拿出来，Discard 扔掉。
+
 ---
 
 <a id="github-desktop-cn"></a>
