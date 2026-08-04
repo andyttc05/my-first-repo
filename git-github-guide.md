@@ -17,7 +17,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [1. Understanding Git & GitHub](#1-understanding-git-github)
+- [1. Understanding Git and GitHub](#1-understanding-git-and-github)
 - [2. Environment Setup](#2-environment-setup)
 - [3. Commit: Saving Snapshots](#3-commit-saving-snapshots)
 - [4. Branch: Branch Management](#4-branch-branch-management)
@@ -51,7 +51,7 @@ AI way:      understand concepts -> direct AI -> AI executes
 
 ---
 
-## 1. Understanding Git & GitHub
+## 1. Understanding Git and GitHub
 
 ### 1.1 The Thesis Story
 
@@ -134,7 +134,7 @@ GitHub's official **graphical Git client** — turns command-line operations int
 ### 2.4 Install VSCode
 [code.visualstudio.com](https://code.visualstudio.com/) → download → install. This is our **code editor** — write and edit files here.
 
-### 2.5 Bind AI Agent to Git & GitHub
+### 2.5 Bind AI Agent to Git and GitHub
 This is the **key step** in the AI era — let AI handle initialization and push.
 
 1. Create an empty folder
