@@ -1,12 +1,12 @@
-# JetBrains IDE（PyCharm / IntelliJ）配置
-.idea/
-
-# VS Code 配置
+# VS Code
 .vscode/
 
-# macOS 系统垃圾文件
+# WorkBuddy workspace files
+.workbuddy/
+
+# macOS system files
 .DS_Store
 
-# Python 缓存（以后写 Python 会用到）
+# Python cache
 __pycache__/
 *.pyc

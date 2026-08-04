@@ -6,7 +6,7 @@
 
 # my-first-repo
 
-### *始于一个简单的问题：Git 到底是个啥。然后就停不下来了。*
+### *Git + GitHub，从零到一。*
 
 </div>
 
@@ -16,69 +16,45 @@
   <a href="https://andyttc05.github.io"><img src="https://img.shields.io/badge/在线网站-andyttc05.github.io-brightgreen?style=flat-square" alt="GitHub Pages"></a>
   <a href="https://github.com/andyttc05/my-first-repo/blob/main/README.md"><img src="https://img.shields.io/badge/README-English-%233498db?style=flat-square" alt="English"></a>
   <a href="https://github.com/andyttc05/my-first-repo/blob/main/LICENSE"><img src="https://img.shields.io/badge/协议-MIT-blueviolet?style=flat-square" alt="License"></a>
-  <img src="https://img.shields.io/badge/学习中-进行中-ff69b4?style=flat-square" alt="状态">
+  <a href="https://www.bilibili.com/video/BV1ySLc6QEcB"><img src="https://img.shields.io/badge/参考资料-B站_@技术爬爬虾-FB7299?style=flat-square&logo=bilibili" alt="参考资料"></a>
 </p>
 
 <br>
 
-> "第一次 commit 最难。之后的每一次，不过是再来一次。"
-
 ---
 
-## 故事
+## 这个仓库里有什么
 
-八月的一个下午，我坐在电脑前，旁边蹲着一只小帮手 Momo。我问她："Git 到底是个啥？"
-
-四个小时后，我已经把代码推到了一个叫 GitHub 的地方。第二天，有了一个自己的双语网站。
-
-这个仓库就是那条路上的面包屑。每一次 commit 都是"啊，原来是这么回事"的瞬间。每一个文件，都是我希望第一天就有人告诉我的东西。
-
-如果你也从零开始，你来对地方了。
-
----
-
-## 里面有什么
-
-| 文件 | 你会看到什么 |
+| 文件 | 干嘛的 |
 | :--- | :--- |
-| **[learning-notes.md](learning-notes.md)** | 完整学习日记。概念、顿悟、翻车现场，全在里面 |
-| **[learn-notes-zh.md](learn-notes-zh.md)** | 同一本日记，中文版 |
-| **[.gitignore](.gitignore)** | 把编辑器生成的垃圾挡在外面 |
+| **[git-github-guide.md](git-github-guide.md)** | Git + GitHub 核心概念串讲，从装环境到多人协作，一条龙 |
+| **[git-github-guide-zh.md](git-github-guide-zh.md)** | 同上，中文版 |
+| **[.gitignore](.gitignore)** | 挡住编辑器和系统垃圾，别让它们进仓库 |
+
+串讲内容包括：为什么 AI 时代更要学 Git、核心概念（commit、branch、merge、四分区模型）、怎么装环境、GitHub 怎么用、怎么跟别人协作、GitHub Desktop 教程，每个环节还配了 AI 提示词，直接复制就能用。
 
 ---
 
-## 我学会的
+## 怎么来的
 
-**Git 是一台相机，不是一个柜子。**
-每次 commit 都是一张照片。昨天的自己随时能翻出来看。
+跟着 B 站 [@技术爬爬虾](https://www.bilibili.com/video/BV1ySLc6QEcB) 的 Git 教程入了门。一边看视频，一边让 Momo（我的 AI 小助手）在旁边陪我实操：讲概念、改笔记、检查命令有没有写错。遇到不懂的地方就问 Momo"这是什么？""为什么会这样？"，她一个一个拆开来讲。
 
-**GitHub 是你放在云端的相册。**
-可以晒、可以锁、可以换电脑。相册永远在。
-
-你的文件夹 → `git add` → `git commit` → GitHub。四站地铁，全程就这样。每天就三句话：`add .`，`commit -m`，`push`。养成习惯就好。
-
-**.gitignore 是个门卫。** 告诉他谁不能进。但如果有人已经溜进去了，得用 `git rm --cached` 把人请出来。
-
-仓库是个行李箱，提起文件夹，走到哪拖到哪。藏在里面的 `.git` 目录装着所有东西，历史、远程链接、全部记忆。
-
-**PyCharm 和 GitHub Desktop 是好朋友。** 它们看同一个文件夹。你在 PyCharm 保存文件，GitHub Desktop 已经知道了。像魔法，但其实只是文件系统在帮忙。
+看完视频觉得不够，又自己搜了一堆资料，把缺的补上。本来只是自己的学习笔记，Momo 说"写得挺好的，要不要整理成一份完整的指南？"于是就变成了现在这份中英双语的串讲。如果能帮到同样从零开始的人，那就太好了。
 
 ---
 
-## 工具箱
+## 我在用什么
 
-| 我在用什么 | 干嘛的 | 状态 |
-| :--- | :--- | :---: |
-| **WorkBuddy** | 我的主力 AI 助手 | ✅ |
-| **Claude Code** | 我的 AI 副手 | ✅ |
-| **GitHub Desktop** | 相册，不用终端 | ✅ |
-| **PyCharm** | 写代码的地方（浅色主题、大字） | ✅ |
-| **GitHub Pages** | 属于我的一小块互联网 → [去看看](https://andyttc05.github.io) | ✅ |
-| **Git** | 那台相机 | ✅ |
+| 工具 | 拿来干嘛 |
+| :--- | :--- |
+| **VSCode** | 写代码 |
+| **GitHub Desktop** | 管 Git，全程点按钮 |
+| **GitHub Pages** | 个人网站 → [andyttc05.github.io](https://andyttc05.github.io) |
+| **WorkBuddy** | AI 助手，陪我一起学 |
 
 ---
 
-## 打个招呼
+## 联系我
 
 <p>
   <a href="https://github.com/andyttc05">github.com/andyttc05 ↗</a>
@@ -92,10 +68,6 @@
 
 <div align="center">
 
-> 这个仓库之所以存在，是因为有一只小帮手叫 Momo。她耐心地把每个东西讲三遍，从来没让我觉得自己笨。
->
-> 如果你也在学，你可以的。我们都从零开始过。
-
-<br>
+> 从零开始一点也不丢人，每个人都这么过来的。
 
 </div>
